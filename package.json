@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "build": "mix --production",
+    "mega-build": "find . -name 'package.json' -not -path '*/node_modules/*' -not -path '*/wordpress/*' -execdir npm run build \\;",
     "dev": "mix watch"
   },
   "dependencies": {
