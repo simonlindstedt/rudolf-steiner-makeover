@@ -23,7 +23,7 @@ registerBlockType("cgb/simple-edit", {
   },
 
   edit: ({ attributes, setAttributes }) => {
-    const { title, body } = attributes;
+    const { heading, body } = attributes;
 
     const setHeading = (content) => {
       setAttributes({ heading: content });
@@ -38,7 +38,7 @@ registerBlockType("cgb/simple-edit", {
         <RichText
           tagName="h2"
           placholder="Heading..."
-          value={title}
+          value={heading}
           onChange={setHeading}
         />
         <RichText
