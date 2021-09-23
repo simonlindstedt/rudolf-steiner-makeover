@@ -1,11 +1,9 @@
 <?php get_header(); ?>
 <main>
     <?php if (have_posts()) : ?>
-        <?php while (have_posts()) : the_post() ?>
-            <div>
-                <h2><?= the_title() ?></h2>
-                <p><?= the_content() ?></p>
-            </div>
+        <?php while (have_posts()) : the_post(); ?>
+            <h2><?= the_title(); ?></h2>
+            <?= the_content(); ?>
         <?php endwhile; ?>
     <?php endif; ?>
 </main>
