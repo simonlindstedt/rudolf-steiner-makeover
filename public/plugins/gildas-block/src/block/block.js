@@ -1,4 +1,6 @@
 /* alert("this is a test"); */
+import "./editor.scss";
+import "./style.scss";
 
 wp.blocks.registerBlockType("cgb/block-gildas-block", {
   title: "Gildas Block",
