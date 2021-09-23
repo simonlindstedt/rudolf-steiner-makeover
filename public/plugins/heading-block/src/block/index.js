@@ -4,52 +4,54 @@ import "./style.scss";
 const { registerBlockType } = wp.blocks;
 const { RichText } = wp.editor;
 
-registerBlockType("cgb/simple-edit", {
-  title: "Simple edit block",
+registerBlockType("custom/block-heading-block", {
+  title: "Heading block",
   icon: "shield",
   category: "common",
 
   attributes: {
     heading: {
       type: "string",
-      source: "html",
-      selector: "h2",
     },
     body: {
       type: "string",
-      source: "html",
-      selector: "p",
     },
   },
 
   edit: ({ attributes, setAttributes }) => {
     const { heading, body } = attributes;
 
-    const setHeading = (content) => {
+    const setHeadingText = (content) => {
       setAttributes({ heading: content });
     };
-
-    const setBody = (content) => {
+    const setBodyText = (content) => {
       setAttributes({ body: content });
     };
 
     return (
-      <div className="simple-editor-wrapper">
+      <div class="main-header">
         <RichText
-          tagName="h2"
-          placholder="Heading..."
+          tagName="h1"
           value={heading}
-          onChange={setHeading}
+          onChange={setHeadingText}
+          placeholder="Heading"
         />
         <RichText
           tagName="p"
-          placholder="Body text..."
           value={body}
-          onChange={setBody}
+          onChange={setBodyText}
+          placeholder="Body text"
         />
       </div>
     );
   },
-
-  save: ({ attributes }) => {},
+  save: ({ attributes }) => {
+    const { heading, body } = attributes;
+    return (
+      <header class="main-header">
+        <h1>{heading}</h1>
+        <p>{body}</p>
+      </header>
+    );
+  },
 });

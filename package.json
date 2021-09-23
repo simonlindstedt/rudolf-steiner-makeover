@@ -2,9 +2,9 @@
   "private": true,
   "scripts": {
     "build": "mix --production",
+    "dev": "mix watch",
     "global-install": "find . -name 'package.json' -not -path '*/node_modules/*' -not -path '*/wordpress/*' -execdir npm i \\;",
-    "global-build": "find . -name 'package.json' -not -path '*/node_modules/*' -not -path '*/wordpress/*' -execdir npm run build \\;",
-    "dev": "mix watch"
+    "global-build": "find . -name 'package.json' -not -path '*/node_modules/*' -not -path '*/wordpress/*' -execdir npm run build \\;"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
