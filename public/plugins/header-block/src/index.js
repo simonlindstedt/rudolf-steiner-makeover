@@ -1,12 +1,17 @@
+import { registerBlockType } from "@wordpress/blocks";
+import {
+  RichText,
+  InspectorControls,
+  ColorPalette,
+} from "@wordpress/block-editor";
+
+import { PanelBody } from "@wordpress/components";
+
 import "./editor.scss";
 import "./style.scss";
 
-const { registerBlockType } = wp.blocks;
-const { RichText, InspectorControls, ColorPalette } = wp.blockEditor;
-const { PanelBody } = wp.components;
-
-registerBlockType("custom/block-heading-block", {
-  title: "Heading block",
+registerBlockType("create-block/header-block", {
+  title: "Header Block",
   icon: "shield",
   category: "common",
 
@@ -90,6 +95,7 @@ registerBlockType("custom/block-heading-block", {
       </div>,
     ];
   },
+
   save: ({ attributes }) => {
     const { headingText, bodyText, backgroundColor, headingColor, bodyColor } =
       attributes;

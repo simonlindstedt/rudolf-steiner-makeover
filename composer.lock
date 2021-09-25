@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3bb887fa7e553b8794d57146ca00fae6",
+    "content-hash": "4da9762cb29f037a0d1611d6e5bd7ea4",
     "packages": [
         {
             "name": "composer/installers",
@@ -1003,24 +1003,6 @@
                 "source": "https://github.com/wordplate/framework/tree/10.0.0"
             },
             "time": "2021-07-26T13:25:11+00:00"
-        },
-        {
-            "name": "wpackagist-plugin/gutenberg",
-            "version": "11.5.1",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/gutenberg/",
-                "reference": "tags/11.5.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/gutenberg.11.5.1.zip"
-            },
-            "require": {
-                "composer/installers": "~1.0 || ~2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/gutenberg/"
         }
     ],
     "packages-dev": [],
@@ -1033,5 +1015,5 @@
         "php": "^7.4 || ^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
