@@ -3,6 +3,7 @@ import {
   RichText,
   InspectorControls,
   ColorPalette,
+  useBlockProps,
 } from "@wordpress/block-editor";
 
 import { PanelBody } from "@wordpress/components";
@@ -77,7 +78,11 @@ registerBlockType("create-block/header-block", {
           <ColorPalette value={bodyColor} onChange={setBodyColor} />
         </PanelBody>
       </InspectorControls>,
-      <div style={{ backgroundColor: backgroundColor }} className="main-header">
+      <div
+        {...useBlockProps()}
+        style={{ backgroundColor: backgroundColor }}
+        className="main-header"
+      >
         <RichText
           tagName="h2"
           value={headingText}
