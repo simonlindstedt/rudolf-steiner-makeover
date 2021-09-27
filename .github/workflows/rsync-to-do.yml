@@ -17,7 +17,7 @@ jobs:
       - name: create .env file
         run: |
           touch .env
-          echo WP_DEFAULT_THEME=${{secret.WP_DEFAULT_THEME}} >> .env
+          echo WP_DEFAULT_THEME = ${{secret.WP_DEFAULT_THEME}} >> .env
       - name: composer
         run: composer update
       - name: npm install
