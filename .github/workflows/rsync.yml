@@ -1,0 +1,28 @@
+name: rsync
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  publish-with-rsync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install ssh key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{secrets.SSH_KEY}}
+          known_hosts: "temp"
+      - name: add known hosts
+        run: ssh-keyscan -H ${{secrets.SSH_HOST}} >> ~/.ssh/known_hosts
+      - name: composer
+        run: composer update
+      - name: npm install
+        run: npm run global-install
+      - name: npm build
+        run: npm run global-build
+      - name: test
+        run: ls -lah
+      - name: run rsync
+        run: rsync -avzp ./public ./vendor ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/html/
