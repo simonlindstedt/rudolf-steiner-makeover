@@ -1,0 +1,11 @@
+on: [push]
+jobs:
+  rsync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ubuntu-latest
+      - run: echo "hello workflow"
+      - name: Check out code
+      - uses: actions/checkout@v2
+      - run: |
+          ls
