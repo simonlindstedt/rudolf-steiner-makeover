@@ -4,4 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "hello workflow"
-      - run: ls -lah
+      - name: Check out code
+      - uses: actions/checkout@v2
+      - run: |
+          ls
