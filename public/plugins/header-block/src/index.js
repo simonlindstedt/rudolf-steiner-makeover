@@ -78,11 +78,7 @@ registerBlockType("create-block/header-block", {
           <ColorPalette value={bodyColor} onChange={setBodyColor} />
         </PanelBody>
       </InspectorControls>,
-      <div
-        {...useBlockProps()}
-        style={{ backgroundColor: backgroundColor }}
-        className="main-header"
-      >
+      <div {...useBlockProps()} style={{ backgroundColor: backgroundColor }}>
         <RichText
           tagName="h2"
           value={headingText}
@@ -107,7 +103,7 @@ registerBlockType("create-block/header-block", {
     return (
       <header
         style={{ backgroundColor: backgroundColor }}
-        className="main-header"
+        className="custom-header"
       >
         <h2 style={{ color: headingColor }}>{headingText}</h2>
         <p style={{ color: bodyColor }}>{bodyText}</p>
