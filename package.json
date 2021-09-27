@@ -6,7 +6,7 @@
     "global-install": "find . -name 'package.json' -not -path '*/node_modules/*' -not -path '*/wordpress/*' -execdir npm i \\;",
     "global-build": "find . -name 'package.json' -not -path '*/node_modules/*' -not -path '*/wordpress/*' -execdir npm run build \\;",
     "sync": "rsync -avzp --exclude='uploads' --exclude='.DS_Store' ./public ./vendor",
-    "publish": "npm run global-install && npm run global-build && npm run sync"
+    "publish": "npm run global-build && npm run sync"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
