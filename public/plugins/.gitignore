@@ -1,0 +1,4 @@
+# Ignore build except pre made php-files
+
+*/build/*
+!*/build/*.php

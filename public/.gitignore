@@ -4,6 +4,7 @@ mu-plugins/*
 plugins/*
 !plugins/index.php
 !plugins/*-block/
+!plugins/.gitignore
 upgrade
 uploads
 wordpress
