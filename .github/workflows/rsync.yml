@@ -4,3 +4,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "hello workflow"
+      - run: ls -lah
