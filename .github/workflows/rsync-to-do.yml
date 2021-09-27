@@ -23,4 +23,4 @@ jobs:
       - name: test
         run: ls -lah
       - name: run rsync
-        run: rsync -avzp ./public ./vendor ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/html/
+        run: rsync -az --delete ./public ./vendor ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/html/
