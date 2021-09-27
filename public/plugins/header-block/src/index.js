@@ -1,12 +1,18 @@
+import { registerBlockType } from "@wordpress/blocks";
+import {
+  RichText,
+  InspectorControls,
+  ColorPalette,
+  useBlockProps,
+} from "@wordpress/block-editor";
+
+import { PanelBody } from "@wordpress/components";
+
 import "./editor.scss";
 import "./style.scss";
 
-const { registerBlockType } = wp.blocks;
-const { RichText, InspectorControls, ColorPalette } = wp.blockEditor;
-const { PanelBody } = wp.components;
-
-registerBlockType("custom/block-heading-block", {
-  title: "Heading block",
+registerBlockType("create-block/header-block", {
+  title: "Header Block",
   icon: "shield",
   category: "common",
 
@@ -72,7 +78,7 @@ registerBlockType("custom/block-heading-block", {
           <ColorPalette value={bodyColor} onChange={setBodyColor} />
         </PanelBody>
       </InspectorControls>,
-      <div style={{ backgroundColor: backgroundColor }} className="main-header">
+      <div {...useBlockProps()} style={{ backgroundColor: backgroundColor }}>
         <RichText
           tagName="h2"
           value={headingText}
@@ -90,13 +96,14 @@ registerBlockType("custom/block-heading-block", {
       </div>,
     ];
   },
+
   save: ({ attributes }) => {
     const { headingText, bodyText, backgroundColor, headingColor, bodyColor } =
       attributes;
     return (
       <header
         style={{ backgroundColor: backgroundColor }}
-        className="main-header"
+        className="custom-header"
       >
         <h2 style={{ color: headingColor }}>{headingText}</h2>
         <p style={{ color: bodyColor }}>{bodyText}</p>
