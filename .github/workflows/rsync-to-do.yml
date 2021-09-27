@@ -15,9 +15,9 @@ jobs:
       - name: add known hosts
         run: ssh-keyscan -H ${{secrets.SSH_HOST}} >> ~/.ssh/known_hosts
       - name: create .env file
-        run: |
-          touch .env
-          echo WP_DEFAULT_THEME = ${{secret.WP_DEFAULT_THEME}} >> .env
+        run: touch .env
+      - name: populate .env file
+        run: echo WP_DEFAULT_THEME=${{secrets.WP_DEFAULT_THEME}} >> .env
       - name: composer
         run: composer update
       - name: npm install
