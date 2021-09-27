@@ -2,7 +2,8 @@ name: rsync
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   publish-with-rsync:
