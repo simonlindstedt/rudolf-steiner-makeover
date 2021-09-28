@@ -1,0 +1,26 @@
+.curved-wrapper {
+  position: relative;
+  width: 100%;
+  .top {
+    display: block;
+    position: absolute;
+    height: 50vh;
+    width: inherit;
+    z-index: -1;
+    top: calc(-50vh + 10px);
+  }
+  .curved-block {
+    min-height: 100vh;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    mask: url("../svg/curve.svg");
+    mask-size: cover;
+    mask-position: bottom;
+    -webkit-mask: url("../svg/curve.svg");
+    -webkit-mask-size: cover;
+    -webkit-mask-position: bottom;
+  }
+}

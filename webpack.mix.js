@@ -19,4 +19,7 @@ mix.setResourceRoot("../");
 mix.setPublicPath(`public/themes/${theme}/assets`);
 
 mix.js("resources/scripts/app.js", `app.js`);
-mix.sass("resources/styles/app.scss", "app.css");
+mix
+  .sass("resources/styles/app.scss", "app.css")
+  .options({ processCssUrls: false });
+mix.copyDirectory("resources/svg", `public/themes/${theme}/svg`);
