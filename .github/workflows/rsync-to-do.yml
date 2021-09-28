@@ -1,6 +1,9 @@
 name: rsync-to-do
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   rsync:
