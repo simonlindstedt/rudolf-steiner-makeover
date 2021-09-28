@@ -1,4 +1,4 @@
-name: rsync-to-do
+name: deploy
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  rsync:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
