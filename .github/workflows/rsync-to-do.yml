@@ -25,4 +25,4 @@ jobs:
       - name: npm build
         run: npm run global-build
       - name: run rsync
-        run: rsync -az --delete ./public ./vendor ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/html/
+        run: rsync -azh --delete ./public ./vendor ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/html/
