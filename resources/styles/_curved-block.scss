@@ -15,12 +15,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     mask: url("../svg/curve.svg");
     mask-size: cover;
     mask-position: bottom;
-    -webkit-mask: url("../svg/curve.svg");
-    -webkit-mask-size: cover;
-    -webkit-mask-position: bottom;
   }
 }
