@@ -97,13 +97,16 @@ registerBlockType("create-block/image-block", {
 		};
 
 		return (
-			<div className="card">
-				{cardImage(attributes.imageUrl, attributes.imageAlt)}
-				<div className="card__content">
-					<h3 className="card__title">{attributes.title}</h3>
-					<div className="card__body">{attributes.body}</div>
+			<>
+				<div className="card">
+					{cardImage(attributes.imageUrl, attributes.imageAlt)}
+					<div className="card__content">
+						<h3 className="card__title">{attributes.title}</h3>
+						<div className="card__body">{attributes.body}</div>
+					</div>
 				</div>
-			</div>
+				<button className="scroll-button">↓</button>
+			</>
 		);
 	},
 });
