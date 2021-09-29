@@ -19,4 +19,9 @@
     mask-size: cover;
     mask-position: bottom;
   }
+  &:last-child {
+    .curved-block {
+      mask: unset;
+    }
+  }
 }
