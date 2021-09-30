@@ -12,11 +12,9 @@ header {
 }
 
 button.scroll-button {
-  cursor: pointer;
-  border: none;
+  background-color: darkgray;
   border-radius: 50%;
   position: absolute;
-  z-index: 1000;
   width: 64px;
   height: 64px;
   left: calc(50vw - 64px / 2);

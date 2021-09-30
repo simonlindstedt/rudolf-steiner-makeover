@@ -1,35 +1,117 @@
 nav {
   width: 100%;
+  height: 128px;
   position: fixed;
-  top: 64px;
   z-index: 1000;
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+
+  .menu-wrapper {
     display: flex;
-    justify-content: space-evenly;
-  }
-  li {
-    a {
-      font-size: 24px;
-      color: black;
-    }
-  }
-  li.submenu {
-    ul.submenu-list {
-      position: absolute;
-      padding-left: 8px;
-      display: none;
-      a {
-        font-size: 16px;
-      }
-    }
+    width: inherit;
+    transform: translateX(100%);
+    height: 100vh;
+    background-color: darkgray;
+
     &.active {
-      ul.submenu-list {
-        display: flex;
-        flex-direction: column;
+      transform: translateX(0%);
+    }
+
+    .decoration {
+      background-color: black;
+      position: relative;
+      height: inherit;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      h2 {
+        color: white;
+        margin: 0px;
+        margin-right: -5.3rem;
+        margin-bottom: 25vh;
+        font-size: 6rem;
+        transform: rotate(-90deg);
       }
+    }
+
+    ul {
+      margin-top: 30vh;
+      flex-grow: 2;
+      height: inherit;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 0.5rem 0rem 0.5rem 1rem;
+
+      a,
+      button {
+        border: none;
+        font-size: 24px;
+        color: black;
+      }
+    }
+
+    li.submenu {
+      ul.submenu-list {
+        margin: 0;
+        height: unset;
+        display: none;
+
+        li {
+          a {
+            font-size: 20px;
+          }
+        }
+      }
+
+      &.active {
+        ul.submenu-list {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  button.menu-button {
+    position: absolute;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    background-color: darkgray;
+    top: 32px;
+    right: 32px;
+  }
+  @media screen and (min-width: 1000px) {
+    .menu-wrapper {
+      height: inherit;
+      transform: unset;
+      background-color: unset;
+
+      .decoration {
+        display: none;
+      }
+
+      ul {
+        margin: 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        li {
+          margin: 0;
+        }
+
+        ul.submenu-list {
+          align-items: flex-start;
+          position: absolute;
+        }
+      }
+    }
+
+    button.menu-button {
+      display: none;
     }
   }
 }

@@ -19,7 +19,7 @@ function orderMenu($menuItems)
     $orderedMenuItems = [];
 
     foreach ($menuItems as $menuItem) {
-        if ($menuItem->type_label === 'Page') {
+        if ($menuItem->menu_item_parent === "0") {
             // Add item to the page array
             $orderedMenuItems[]["page"] = $menuItem;
         } else {

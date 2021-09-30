@@ -24,19 +24,6 @@
   font-size: 24px;
 }
 
-button.scroll-button {
-  cursor: pointer;
-  border: none;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 1000;
-  width: 64px;
-  height: 64px;
-  left: calc(50vw - 64px / 2);
-  right: calc(50vw - 64px / 2);
-  bottom: 32px;
-}
-
 @media (max-width: 1000px) {
   .card__content {
     width: 300px;
