@@ -9,16 +9,31 @@ window.onload = () => {
   });
 
   subMenus.forEach((subMenu) => {
-    subMenu.querySelector("button").addEventListener("click", (event) => {
+    subMenu.querySelector("button").addEventListener("click", () => {
       subMenu.classList.toggle("active");
     });
   });
 
   window.onresize = () => {
     if (window.innerWidth > 1000) {
+      // Remove active class from menu-wrapper
       menuWrapper.classList.remove("active");
       subMenus.forEach((subMenu) => {
         subMenu.classList.remove("active");
+      });
+
+      // Unset and set transition for the mobile animation (to prevent transition bug)
+      menuWrapper.style.transition = `unset`;
+
+      setTimeout(() => {
+        menuWrapper.style.transition = "transform 0.3s ease-out";
+      });
+    } else {
+      // Unset and set transition for the mobile animation (to prevent transition bug)
+      menuWrapper.style.transition = `unset`;
+
+      setTimeout(() => {
+        menuWrapper.style.transition = "transform 0.3s ease-out";
       });
     }
   };
