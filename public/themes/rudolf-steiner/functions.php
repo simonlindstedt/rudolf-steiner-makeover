@@ -13,3 +13,20 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('style', get_theme_file_uri('assets/app.css'));
     wp_enqueue_script('script', get_theme_file_uri('assets/app.js'));
 });
+
+function orderMenu($menuItems)
+{
+    $orderedMenuItems = [];
+
+    foreach ($menuItems as $menuItem) {
+        if ($menuItem->type_label === 'Page') {
+            // Add item to the page array
+            $orderedMenuItems[]["page"] = $menuItem;
+        } else {
+            // Add item to it's "parent"
+            $orderedMenuItems[sizeof($orderedMenuItems) - 1]["children"][] = $menuItem;
+        }
+    }
+
+    return $orderedMenuItems;
+}

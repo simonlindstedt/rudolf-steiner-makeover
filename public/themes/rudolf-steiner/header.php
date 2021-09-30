@@ -8,17 +8,5 @@
     <?= wp_head(); ?>
 </head>
 
-<?php $menuItems = wp_get_nav_menu_items('main-nav'); ?>
-
 <body>
-    <nav>
-        <ul>
-            <?php foreach ($menuItems as $menuItem) : ?>
-                <li>
-                    <a href="<?= $menuItem->url; ?>">
-                        <?= $menuItem->title; ?>
-                    </a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
-    </nav>
+    <?php require __DIR__ .  "/components/nav-menu.php"; ?>
