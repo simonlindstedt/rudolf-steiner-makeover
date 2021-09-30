@@ -4,6 +4,38 @@ nav {
   position: fixed;
   z-index: 1000;
 
+  @media screen and (min-width: 1000px) {
+    .menu-wrapper {
+      height: inherit;
+      transform: unset;
+      background-color: unset;
+
+      .decoration {
+        display: none;
+      }
+
+      ul {
+        margin: 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        li {
+          margin: 0;
+        }
+
+        ul.submenu-list {
+          align-items: flex-start;
+          position: absolute;
+        }
+      }
+    }
+
+    button.menu-button {
+      display: none;
+    }
+  }
+
   .menu-wrapper {
     display: flex;
     width: inherit;
@@ -83,36 +115,5 @@ nav {
     background-color: darkgray;
     top: 32px;
     right: 32px;
-  }
-  @media screen and (min-width: 1000px) {
-    .menu-wrapper {
-      height: inherit;
-      transform: unset;
-      background-color: unset;
-
-      .decoration {
-        display: none;
-      }
-
-      ul {
-        margin: 0;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-
-        li {
-          margin: 0;
-        }
-
-        ul.submenu-list {
-          align-items: flex-start;
-          position: absolute;
-        }
-      }
-    }
-
-    button.menu-button {
-      display: none;
-    }
   }
 }
