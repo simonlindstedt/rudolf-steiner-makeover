@@ -19,6 +19,7 @@ nav {
   li.submenu {
     ul.submenu-list {
       position: absolute;
+      padding-left: 8px;
       display: none;
       a {
         font-size: 16px;
