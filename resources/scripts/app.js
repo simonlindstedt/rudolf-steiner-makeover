@@ -6,6 +6,12 @@ window.onload = () => {
 
   menuButton.addEventListener("click", () => {
     menuWrapper.classList.toggle("active");
+
+    if (menuWrapper.classList.contains("active")) {
+      menuWrapper.style.animationName = `slideIn`;
+    } else {
+      menuWrapper.style.animationName = `slideOut`;
+    }
   });
 
   subMenus.forEach((subMenu) => {
@@ -18,22 +24,9 @@ window.onload = () => {
     if (window.innerWidth > 1000) {
       // Remove active class from menu-wrapper
       menuWrapper.classList.remove("active");
+      menuWrapper.style.animationName = "unset";
       subMenus.forEach((subMenu) => {
         subMenu.classList.remove("active");
-      });
-
-      // Unset and set transition for the mobile animation (to prevent transition bug)
-      menuWrapper.style.transition = `unset`;
-
-      setTimeout(() => {
-        menuWrapper.style.transition = "transform 0.3s ease-out";
-      });
-    } else {
-      // Unset and set transition for the mobile animation (to prevent transition bug)
-      menuWrapper.style.transition = `unset`;
-
-      setTimeout(() => {
-        menuWrapper.style.transition = "transform 0.3s ease-out";
       });
     }
   };
