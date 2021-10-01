@@ -77,15 +77,14 @@ nav {
         margin: 0;
         height: unset;
         display: none;
-        opacity: 0;
-
-        animation-duration: 0.5s;
-        animation-timing-function: linear;
-        animation-iteration-count: 1;
-        animation-direction: normal;
-        animation-fill-mode: forwards;
 
         li {
+          opacity: 0;
+          animation-duration: 0.2s;
+          animation-timing-function: linear;
+          animation-iteration-count: 1;
+          animation-direction: normal;
+          animation-fill-mode: forwards;
           a {
             font-size: 20px;
           }

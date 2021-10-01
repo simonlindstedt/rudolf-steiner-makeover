@@ -16,13 +16,24 @@ window.onload = () => {
 
   subMenus.forEach((subMenu) => {
     subMenu.querySelector("button").addEventListener("click", () => {
+      const subMenuItems = subMenu.querySelectorAll("ul li");
       subMenu.classList.toggle("active");
 
       if (subMenu.classList.contains("active")) {
-        subMenu.querySelector("ul").style.animationName = `fade-in`;
+        // Add fade-in animation
+        let delay = 0;
+        subMenuItems.forEach((item) => {
+          item.style.animationDelay = `${delay}s`;
+          item.style.animationName = `fade-in`;
+          delay += 0.2;
+        });
       } else {
-        subMenu.querySelector("ul").style.animationName = `unset`;
+        // Remove animation
+        subMenuItems.forEach((item) => {
+          item.style = "";
+        });
       }
+      s;
     });
   });
 
