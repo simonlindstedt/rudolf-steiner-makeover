@@ -8,15 +8,21 @@ window.onload = () => {
     menuWrapper.classList.toggle("active");
 
     if (menuWrapper.classList.contains("active")) {
-      menuWrapper.style.animationName = `slideIn`;
+      menuWrapper.style.animationName = `slide-in`;
     } else {
-      menuWrapper.style.animationName = `slideOut`;
+      menuWrapper.style.animationName = `slide-out`;
     }
   });
 
   subMenus.forEach((subMenu) => {
     subMenu.querySelector("button").addEventListener("click", () => {
       subMenu.classList.toggle("active");
+
+      if (subMenu.classList.contains("active")) {
+        subMenu.querySelector("ul").style.animationName = `fade-in`;
+      } else {
+        subMenu.querySelector("ul").style.animationName = `unset`;
+      }
     });
   });
 
