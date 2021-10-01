@@ -16,17 +16,19 @@ add_action('wp_enqueue_scripts', function () {
 
 function orderMenu($menuItems)
 {
-    $orderedMenuItems = [];
+    $fixedMenu = [];
+    $index = 0;
 
     foreach ($menuItems as $menuItem) {
-        if ($menuItem->menu_item_parent === "0") {
-            // Add item to the page array
-            $orderedMenuItems[]["page"] = $menuItem;
+        if ((int) $menuItem->menu_item_parent === 0) {
+            // Add item as top level
+            $menuItem->children = [];
+            $fixedMenu[++$index] = $menuItem;
         } else {
-            // Add item to it's "parent"
-            $orderedMenuItems[sizeof($orderedMenuItems) - 1]["children"][] = $menuItem;
+            // Add item as child to corresponding parent
+            $fixedMenu[$index]->children[] = $menuItem;
         }
     }
 
-    return $orderedMenuItems;
+    return $fixedMenu;
 }
