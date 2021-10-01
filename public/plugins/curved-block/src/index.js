@@ -4,6 +4,7 @@ import {
 	PlainText,
 	useBlockProps,
 	ColorPalette,
+	InnerBlocks,
 } from "@wordpress/block-editor";
 
 import { PanelBody } from "@wordpress/components";
@@ -16,7 +17,7 @@ registerBlockType("create-block/curved-block", {
 	category: "common",
 
 	attributes: {
-		mainHeading: {
+		title: {
 			type: "string",
 		},
 		backgroundColor: {
@@ -26,11 +27,16 @@ registerBlockType("create-block/curved-block", {
 
 	edit: ({ attributes, setAttributes }) => {
 		// Attributes
-		const { mainHeading, backgroundColor } = attributes;
+		const { title, backgroundColor } = attributes;
+		const ALLOWED_BLOCKS = [
+			"core/heading",
+			"core/paragraph",
+			"create-block/image-cluster-block",
+		];
 
 		// Functions
-		const setMainHeader = (value) => {
-			setAttributes({ mainHeading: value });
+		const setTitle = (value) => {
+			setAttributes({ title: value });
 		};
 		const setBackgroundColor = (value) => {
 			setAttributes({ backgroundColor: value });
@@ -48,21 +54,23 @@ registerBlockType("create-block/curved-block", {
 			</InspectorControls>,
 			<div {...useBlockProps()} style={{ backgroundColor: backgroundColor }}>
 				<PlainText
-					value={mainHeading}
+					value={title}
 					placeholder="Heading"
-					onChange={setMainHeader}
+					onChange={setTitle}
+					className="title"
 					style={{
 						fontSize: "24px",
 						backgroundColor: "unset",
 						width: "auto",
 					}}
 				/>
+				<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
 			</div>,
 		];
 	},
 	save: ({ attributes }) => {
 		// Attributes
-		const { mainHeading, backgroundColor } = attributes;
+		const { title, backgroundColor } = attributes;
 		return (
 			<div className="curved-wrapper">
 				<span className="top" style={{ backgroundColor: backgroundColor }} />
@@ -70,7 +78,10 @@ registerBlockType("create-block/curved-block", {
 					className="curved-block"
 					style={{ backgroundColor: backgroundColor }}
 				>
-					<h2>{mainHeading}</h2>
+					<h2>{title}</h2>
+					<div className="content">
+						<InnerBlocks.Content />
+					</div>
 				</div>
 			</div>
 		);

@@ -5,8 +5,19 @@
  */
 
 .wp-block-create-block-curved-block {
-	height: 300px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	min-height: 200px;
+	position: relative !important;
+	display: flex !important;
+	justify-content: space-evenly !important;
+	align-items: center !important;
+
+	.block-editor-inner-blocks {
+		width: 90% !important;
+	}
+
+	textarea.title {
+		position: absolute;
+		top: 8px;
+		left: 8px;
+	}
 }
