@@ -1,0 +1,14 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-image-cluster-block {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	img {
+		height: 100%;
+		object-fit: cover;
+	}
+}

@@ -1,6 +1,7 @@
 .curved-wrapper {
   position: relative;
   width: 100%;
+
   .top {
     display: block;
     position: absolute;
@@ -9,16 +10,31 @@
     z-index: -1;
     top: calc(-50vh + 10px);
   }
+
   .curved-block {
     min-height: 100vh;
     width: inherit;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     mask: url("../svg/curve.svg");
     mask-size: cover;
     mask-position: bottom;
   }
+
+  .image-cluster {
+    padding: 16px;
+    height: 50vh;
+    position: relative;
+    width: inherit;
+    display: flex;
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
   &:last-child {
     .curved-block {
       mask: unset;
