@@ -14,7 +14,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('script', get_theme_file_uri('assets/app.js'));
 });
 
-function orderMenu($menuItems)
+function orderMenu(array $menuItems): array
 {
     $fixedMenu = [];
     $index = 0;
