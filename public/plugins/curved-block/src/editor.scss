@@ -5,7 +5,9 @@
  */
 
 .wp-block-create-block-curved-block {
-	min-height: 200px;
+	min-height: 300px;
+	height: auto !important;
+	padding: 32px 0px;
 	position: relative !important;
 	display: flex !important;
 	justify-content: space-evenly !important;
