@@ -33,6 +33,7 @@ registerBlockType("create-block/curved-block", {
 			"core/paragraph",
 			"create-block/image-cluster-block",
 			"create-block/contact-block",
+			"create-block/link-grid-block",
 		];
 
 		// Functions

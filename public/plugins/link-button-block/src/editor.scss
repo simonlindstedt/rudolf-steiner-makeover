@@ -1,0 +1,21 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-link-button-block {
+	min-height: 100px;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	padding: 8px;
+	textarea {
+		background-color: unset;
+		&.link-title {
+			font-size: 2rem;
+			margin-bottom: 1rem;
+		}
+	}
+}
