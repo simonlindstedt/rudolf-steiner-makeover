@@ -30,14 +30,14 @@ window.onload = () => {
       } else {
         // Remove animation
         subMenuItems.forEach((item) => {
-          item.style = "";
+          item.removeAttribute("style");
         });
       }
     });
   });
 
   window.onresize = () => {
-    if (window.innerWidth > 1000) {
+    if (window.innerWidth > 1024) {
       // Remove active class from menu-wrapper
       menuWrapper.classList.remove("active");
       menuWrapper.style.animationName = "unset";

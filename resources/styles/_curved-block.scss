@@ -22,7 +22,11 @@
     mask-size: cover;
     mask-position: bottom;
 
-    @media screen and (max-width: 1300px) {
+    .content {
+      margin-bottom: 20vh;
+    }
+
+    @media screen and (min-width: 1300px) {
       mask: url("../svg/curve-big.svg");
       mask-size: cover;
       mask-position: bottom;
@@ -76,6 +80,7 @@
 
       img {
         width: 100%;
+        max-width: unset;
       }
     }
   }

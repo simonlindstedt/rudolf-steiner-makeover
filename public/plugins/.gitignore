@@ -1,3 +1,2 @@
-# Ignore build except pre made php-files
-
+# Ignore build
 */build/*
