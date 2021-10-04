@@ -1,3 +1,7 @@
+@use "nested-curve-blocks/image";
+@use "nested-curve-blocks/link";
+@use "nested-curve-blocks/contact";
+
 .curved-wrapper {
   position: relative;
   width: 100%;
@@ -31,58 +35,9 @@
       justify-content: center;
       align-items: center;
 
-      .image-cluster {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        max-width: 1024px;
-        position: relative;
-        min-height: 60vh;
-
-        img {
-          padding: 4px 8px;
-          position: absolute;
-          object-fit: cover;
-          width: calc(100vw / 4);
-          max-width: 460px;
-          aspect-ratio: 1 / 1;
-          &:nth-child(1) {
-            z-index: 2;
-            top: 0;
-            right: 0;
-          }
-          &:nth-child(2) {
-            z-index: 1;
-          }
-          &:nth-child(3) {
-            z-index: 3;
-            left: 0;
-            bottom: 0;
-          }
-        }
-
-        @media screen and (max-width: 1800px) {
-          min-height: 50vh;
-        }
-
-        @media screen and (max-width: 1300px) {
-          img {
-            width: calc(100vw / 3);
-            position: static;
-          }
-        }
-
-        @media screen and (max-width: 800px) {
-          flex-direction: column;
-          height: auto;
-
-          img {
-            width: 100%;
-            max-width: unset;
-          }
-        }
-      }
+      @include image.cluster;
+      @include link.grid;
+      @include contact.block;
     }
 
     @media screen and (min-width: 1300px) {
