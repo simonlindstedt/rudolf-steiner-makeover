@@ -6,6 +6,10 @@ header {
   justify-content: center;
   align-items: center;
   position: relative;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
   mask: url("../svg/curve.svg");
   mask-size: cover;
   mask-position: bottom;

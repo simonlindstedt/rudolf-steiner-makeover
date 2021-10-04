@@ -6,15 +6,15 @@
 
 .wp-block-create-block-curved-block {
 	min-height: 300px;
-	height: auto !important;
+	height: auto;
 	padding: 32px 0px;
-	position: relative !important;
-	display: flex !important;
-	justify-content: space-evenly !important;
-	align-items: center !important;
+	position: relative;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
 
 	.block-editor-inner-blocks {
-		width: 90% !important;
+		width: 90%;
 	}
 
 	textarea.title {

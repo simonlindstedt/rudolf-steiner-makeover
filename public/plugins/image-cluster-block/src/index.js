@@ -15,38 +15,44 @@ registerBlockType("create-block/image-cluster-block", {
 		firstImageUrl: {
 			attribute: "src",
 		},
-		firstImageAlt: {
-			type: "string",
-			attribute: "src",
+		firstImageId: {
+			type: "number",
+			default: 0,
 		},
 		secondImageUrl: {
 			attribute: "src",
 		},
-		secondImageAlt: {
-			type: "string",
-			attribute: "alt",
+		secondImageId: {
+			type: "number",
+			default: 0,
 		},
 		thirdImageUrl: {
 			attribute: "src",
 		},
-		thirdImageAlt: {
-			type: "string",
-			attribute: "alt",
+		thirdImageId: {
+			type: "number",
+			default: 0,
 		},
 	},
 
 	edit: ({ attributes, setAttributes }) => {
-		const { firstImageUrl, secondImageUrl, thirdImageUrl, imageID } =
-			attributes;
+		const {
+			firstImageUrl,
+			secondImageUrl,
+			thirdImageUrl,
+			firstImageId,
+			secondImageId,
+			thirdImageId,
+		} = attributes;
 
 		const firstSelect = (media) => {
-			setAttributes({ firstImageUrl: media.url });
+			setAttributes({ firstImageUrl: media.url, firstImageId: media.id });
 		};
 		const secondSelect = (media) => {
-			setAttributes({ secondImageUrl: media.url });
+			setAttributes({ secondImageUrl: media.url, secondImageId: media.id });
 		};
 		const thirdSelect = (media) => {
-			setAttributes({ thirdImageUrl: media.url });
+			setAttributes({ thirdImageUrl: media.url, thirdImageId: media.id });
 		};
 
 		const uploadButton = (open, imgUrl) => {
@@ -54,11 +60,11 @@ registerBlockType("create-block/image-cluster-block", {
 				return (
 					<div>
 						<img src={imgUrl}></img>
-						<button onClick={open}>open</button>
+						<button onClick={open}>Choose Image</button>
 					</div>
 				);
 			} else {
-				return <button onClick={open}>open</button>;
+				return <button onClick={open}>Choose Image</button>;
 			}
 		};
 
@@ -67,17 +73,17 @@ registerBlockType("create-block/image-cluster-block", {
 				<MediaUploadCheck>
 					<MediaUpload
 						onSelect={firstSelect}
-						value={imageID}
+						value={firstImageId}
 						render={({ open }) => uploadButton(open, firstImageUrl)}
 					/>
 					<MediaUpload
 						onSelect={secondSelect}
-						value={imageID}
+						value={secondImageId}
 						render={({ open }) => uploadButton(open, secondImageUrl)}
 					/>
 					<MediaUpload
 						onSelect={thirdSelect}
-						value={imageID}
+						value={thirdImageId}
 						render={({ open }) => uploadButton(open, thirdImageUrl)}
 					/>
 				</MediaUploadCheck>
