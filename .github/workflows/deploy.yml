@@ -28,4 +28,4 @@ jobs:
       - name: npm build
         run: npm run global-build
       - name: run rsync
-        run: rsync -azh --delete --exclude=".gitignore" --exclude="package.json" --exclude="package-lock.json" --exclude="readme.txt" --exclude="node_modules" ./public ./vendor ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/html/
+        run: rsync -azh --delete --exclude=".gitignore" --exclude="package.json" --exclude="package-lock.json" --exclude="readme.txt" --exclude="node_modules" --exclude="src" ./public ./vendor ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/html/
