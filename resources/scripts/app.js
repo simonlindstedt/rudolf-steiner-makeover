@@ -33,7 +33,6 @@ window.onload = () => {
           item.style = "";
         });
       }
-      s;
     });
   });
 
