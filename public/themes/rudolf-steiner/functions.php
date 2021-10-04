@@ -10,8 +10,8 @@ add_action('after_setup_theme', function () {
 });
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('style', get_theme_file_uri('assets/app.css'));
-    wp_enqueue_script('script', get_theme_file_uri('assets/app.js'));
+    wp_enqueue_style('style', get_theme_file_uri('assets/styles/app.css'));
+    wp_enqueue_script('script', get_theme_file_uri('assets/scripts/app.js'));
 });
 
 function orderMenu(array $menuItems): array

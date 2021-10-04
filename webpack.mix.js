@@ -18,8 +18,8 @@ const theme = process.env.WP_DEFAULT_THEME;
 mix.setResourceRoot("../");
 mix.setPublicPath(`public/themes/${theme}/assets`);
 
-mix.js("resources/scripts/app.js", `app.js`);
-mix.sass("resources/styles/app.scss", "app.css").options({
+mix.js("resources/scripts/app.js", `/scripts/app.js`);
+mix.sass("resources/styles/app.scss", "/styles/app.css").options({
   processCssUrls: false,
 });
-mix.copyDirectory("resources/svg", `public/themes/${theme}/svg`);
+mix.copyDirectory("resources/svg", `public/themes/${theme}/assets/svg/`);

@@ -9,6 +9,12 @@ header {
   mask: url("../svg/curve.svg");
   mask-size: cover;
   mask-position: bottom;
+
+  @media screen and (min-width: 1300px) {
+    mask: url("../svg/curve-big.svg");
+    mask-size: cover;
+    mask-position: bottom;
+  }
 }
 
 button.scroll-button {
