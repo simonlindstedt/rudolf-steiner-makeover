@@ -94,9 +94,9 @@ registerBlockType("create-block/image-cluster-block", {
 		const { firstImageUrl, secondImageUrl, thirdImageUrl } = attributes;
 		return [
 			<div className="image-cluster">
-				<img src={firstImageUrl} />
-				<img src={secondImageUrl} />
-				<img src={thirdImageUrl} />
+				<img src={firstImageUrl} className="large" />
+				<img src={secondImageUrl} className="medium" />
+				<img src={thirdImageUrl} className="small" />
 			</div>,
 		];
 	},
