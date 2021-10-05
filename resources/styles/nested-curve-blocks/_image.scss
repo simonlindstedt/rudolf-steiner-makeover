@@ -1,0 +1,58 @@
+@mixin cluster {
+  .image-cluster {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1024px;
+    position: relative;
+    min-height: 720px;
+    border: 1px dotted black;
+
+    img {
+      padding: 4px 8px;
+      position: absolute;
+      object-fit: cover;
+      max-width: 460px;
+      aspect-ratio: 1 / 1;
+
+      &.large {
+        width: calc(100% / 2);
+        left: calc(100% / 5);
+      }
+      &.medium {
+        top: 0;
+        right: calc(100% / 5);
+        width: calc(100% / 3);
+      }
+      &.small {
+        bottom: 0;
+        right: calc(100% / 5);
+        width: calc(100% / 4);
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 400px;
+      min-height: 500px;
+
+      img {
+        &.large {
+          left: 0;
+          width: 300px;
+        }
+        &.medium {
+          right: 0;
+          width: 200px;
+        }
+        &.small {
+          right: 0;
+          width: 150px;
+        }
+      }
+    }
+    @media screen and (max-width: 412px) {
+      width: 100%;
+    }
+  }
+}
