@@ -76,7 +76,7 @@ registerBlockType("create-block/contact-block", {
 		return (
 			<div className="contact-wrapper">
 				<div className="contact-div">
-					<h2>{title}</h2>
+					<h2 className="contact-heading">{title}</h2>
 					<ul className="contact-list">
 						<li className="contact-top">
 							<img
