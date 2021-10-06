@@ -51,11 +51,12 @@
       align-items: center;
 
       p,
-      h2 {
+      h2,
+      .single-image {
         align-self: flex-start;
         margin-left: calc(50% - 250px);
-        max-width: 500px;
-        @media screen and (max-width: 600px) {
+        max-width: 600px;
+        @media screen and (max-width: 700px) {
           max-width: unset;
           margin-left: unset;
           width: 100%;

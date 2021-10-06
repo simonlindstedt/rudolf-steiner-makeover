@@ -6,6 +6,7 @@ import {
 	ColorPalette,
 	MediaUploadCheck,
 	MediaUpload,
+	InnerBlocks,
 } from "@wordpress/block-editor";
 
 import { PanelBody } from "@wordpress/components";
@@ -18,9 +19,6 @@ registerBlockType("create-block/header-block", {
 	category: "common",
 
 	attributes: {
-		mainHeading: {
-			type: "string",
-		},
 		backgroundColor: {
 			type: "string",
 		},
@@ -36,17 +34,12 @@ registerBlockType("create-block/header-block", {
 
 	edit: ({ attributes, setAttributes }) => {
 		// Attributes
-		const {
-			mainHeading,
-			backgroundColor,
-			backgroundImageUrl,
-			backgroundImageId,
-		} = attributes;
+		const { backgroundColor, backgroundImageUrl, backgroundImageId } =
+			attributes;
+
+		const ALLOWED_BLOCKS = ["core/heading"];
 
 		// Functions
-		const setMainHeader = (value) => {
-			setAttributes({ mainHeading: value });
-		};
 		const setBackgroundColor = (value) => {
 			setAttributes({ backgroundColor: value });
 		};
@@ -121,22 +114,13 @@ registerBlockType("create-block/header-block", {
 						: "none",
 				}}
 			>
-				<PlainText
-					value={mainHeading}
-					placeholder="Heading"
-					onChange={setMainHeader}
-					style={{
-						fontSize: "24px",
-						backgroundColor: "unset",
-						width: "auto",
-					}}
-				/>
+				<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
 			</div>,
 		];
 	},
 	save: ({ attributes }) => {
 		// Attributes
-		const { mainHeading, backgroundColor, backgroundImageUrl } = attributes;
+		const { backgroundColor, backgroundImageUrl } = attributes;
 
 		return (
 			<>
@@ -148,7 +132,7 @@ registerBlockType("create-block/header-block", {
 							: "none",
 					}}
 				>
-					<h2>{mainHeading}</h2>
+					<InnerBlocks.Content />
 				</header>
 				<button className="scroll-button">↓</button>
 			</>

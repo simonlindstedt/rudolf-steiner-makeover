@@ -35,6 +35,7 @@ registerBlockType("create-block/curved-block", {
 			"create-block/contact-block",
 			"create-block/link-grid-block",
 			"create-block/text-image-block",
+			"create-block/single-image-block",
 		];
 
 		// Functions
@@ -73,7 +74,7 @@ registerBlockType("create-block/curved-block", {
 	},
 	save: ({ attributes }) => {
 		// Attributes
-		const { pageName, title, backgroundColor } = attributes;
+		const { title, backgroundColor } = attributes;
 		return (
 			<div className="curved-wrapper">
 				<span className="top" style={{ backgroundColor: backgroundColor }} />
