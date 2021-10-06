@@ -11,6 +11,10 @@
     .text {
       padding: 1rem;
       background-color: darkgray;
+
+      * {
+        margin-left: unset;
+      }
     }
 
     &.spotlight {
