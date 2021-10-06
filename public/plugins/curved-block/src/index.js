@@ -73,7 +73,7 @@ registerBlockType("create-block/curved-block", {
 	},
 	save: ({ attributes }) => {
 		// Attributes
-		const { title, backgroundColor } = attributes;
+		const { pageName, title, backgroundColor } = attributes;
 		return (
 			<div className="curved-wrapper">
 				<span className="top" style={{ backgroundColor: backgroundColor }} />
@@ -81,7 +81,7 @@ registerBlockType("create-block/curved-block", {
 					className="curved-block"
 					style={{ backgroundColor: backgroundColor }}
 				>
-					<h2>{title}</h2>
+					<h2 className="sticky-title">{title}</h2>
 					<div className="content">
 						<InnerBlocks.Content />
 					</div>

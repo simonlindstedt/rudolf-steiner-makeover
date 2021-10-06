@@ -27,8 +27,22 @@
     mask-size: cover;
     mask-position: bottom;
 
+    .sticky-title {
+      display: none;
+      @media screen and (max-width: 400px) {
+        display: block;
+        align-self: flex-start;
+        transform: rotate(90deg);
+        position: sticky;
+        top: 1.2rem;
+        width: 30px;
+        margin: 0;
+        font-size: 40px;
+      }
+    }
+
     .content {
-      margin-bottom: 20vh;
+      /* margin-bottom: 20vh; */
       width: 100%;
       padding: 24px;
       display: flex;
