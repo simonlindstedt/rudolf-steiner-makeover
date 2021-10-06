@@ -1,5 +1,6 @@
 import { registerBlockType } from "@wordpress/blocks";
 import {
+	InnerBlocks,
 	InspectorControls,
 	MediaUpload,
 	MediaUploadCheck,
@@ -40,6 +41,7 @@ registerBlockType("create-block/text-image-block", {
 	},
 
 	edit: ({ attributes, setAttributes }) => {
+		const ALLOWED_BLOCKS = ["core/heading", "core/paragraph"];
 		// Attributes
 		const { imageUrl, imageId, heading, body, displayType } = attributes;
 
@@ -94,7 +96,7 @@ registerBlockType("create-block/text-image-block", {
 						render={({ open }) => uploadButton(open)}
 					/>
 				</MediaUploadCheck>
-				<RichText
+				{/* <RichText
 					tagName="h3"
 					value={heading}
 					placeholder="heading"
@@ -115,7 +117,8 @@ registerBlockType("create-block/text-image-block", {
 						backgroundColor: "unset",
 						width: "auto",
 					}}
-				/>
+				/> */}
+				<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
 			</div>,
 		];
 	},
@@ -126,8 +129,9 @@ registerBlockType("create-block/text-image-block", {
 			<div className={`text-image-block ${displayType}`}>
 				{imageUrl && <img src={imageUrl} />}
 				<div className="text">
-					<h3>{heading}</h3>
-					<p>{body}</p>
+					{/* <h3>{heading}</h3>
+					<p>{body}</p> */}
+					<InnerBlocks.Content />
 				</div>
 			</div>
 		);
