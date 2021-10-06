@@ -42,13 +42,25 @@
     }
 
     .content {
-      /* margin-bottom: 20vh; */
+      margin-bottom: 20vh;
       width: 100%;
       padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      p,
+      h2 {
+        align-self: flex-start;
+        margin-left: calc(50% - 250px);
+        max-width: 500px;
+        @media screen and (max-width: 600px) {
+          max-width: unset;
+          margin-left: unset;
+          width: 100%;
+        }
+      }
 
       @include image.cluster;
       @include link.grid;
