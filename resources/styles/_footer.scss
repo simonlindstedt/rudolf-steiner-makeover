@@ -56,10 +56,7 @@ footer {
       font-size: 24px;
     }
   }
-}
-
-@media screen and (max-width: 1024px) {
-  footer {
+  @media screen and (max-width: 1024px) {
     .column-1 {
       display: none;
     }
@@ -67,10 +64,7 @@ footer {
       padding-left: 10vw;
     }
   }
-}
-
-@media screen and (max-width: 620px) {
-  footer {
+  @media screen and (max-width: 620px) {
     height: 35vh;
     flex-direction: column;
     .column-1,

@@ -29,7 +29,7 @@
 
     .sticky-title {
       display: none;
-      @media screen and (max-width: 400px) {
+      @media screen and (max-width: 420px) {
         display: block;
         align-self: flex-start;
         transform: rotate(90deg);
