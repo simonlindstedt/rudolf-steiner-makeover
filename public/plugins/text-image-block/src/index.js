@@ -7,7 +7,7 @@ import {
 	useBlockProps,
 } from "@wordpress/block-editor";
 import "./editor.scss";
-import { PanelBody, SelectControl } from "@wordpress/components";
+import { PanelBody } from "@wordpress/components";
 
 registerBlockType("create-block/text-image-block", {
 	title: "Text Image Block",
@@ -26,10 +26,12 @@ registerBlockType("create-block/text-image-block", {
 		heading: {
 			type: "string",
 			attribute: "h3",
+			source: "html",
 		},
 		body: {
 			type: "string",
 			attribute: "p",
+			source: "html",
 		},
 		displayType: {
 			type: "string",
@@ -93,6 +95,7 @@ registerBlockType("create-block/text-image-block", {
 					/>
 				</MediaUploadCheck>
 				<RichText
+					tagName="h3"
 					value={heading}
 					placeholder="heading"
 					onChange={setHeading}
@@ -103,6 +106,7 @@ registerBlockType("create-block/text-image-block", {
 					}}
 				/>
 				<RichText
+					tagName="p"
 					value={body}
 					placeholder="body"
 					onChange={setBody}
@@ -121,8 +125,10 @@ registerBlockType("create-block/text-image-block", {
 		return (
 			<div className={`text-image-block ${displayType}`}>
 				{imageUrl && <img src={imageUrl} />}
-				<h3>{heading}</h3>
-				<p>{body}</p>
+				<div className="text">
+					<h3>{heading}</h3>
+					<p>{body}</p>
+				</div>
 			</div>
 		);
 	},

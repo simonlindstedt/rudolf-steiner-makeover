@@ -34,6 +34,7 @@ registerBlockType("create-block/curved-block", {
 			"create-block/image-cluster-block",
 			"create-block/contact-block",
 			"create-block/link-grid-block",
+			"create-block/text-image-block",
 		];
 
 		// Functions

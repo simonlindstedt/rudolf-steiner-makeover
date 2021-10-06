@@ -1,6 +1,7 @@
 @use "nested-curve-blocks/image";
 @use "nested-curve-blocks/link";
 @use "nested-curve-blocks/contact";
+@use "nested-curve-blocks/text-image";
 
 .curved-wrapper {
   position: relative;
@@ -38,6 +39,7 @@
       @include image.cluster;
       @include link.grid;
       @include contact.block;
+      @include text-image.block;
     }
 
     @media screen and (min-width: 1300px) {
