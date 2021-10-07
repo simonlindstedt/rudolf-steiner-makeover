@@ -73,6 +73,7 @@
       }
 
       @include image.cluster;
+      @include link.button;
       @include link.grid;
       @include contact.block;
       @include text-image.block;
