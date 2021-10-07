@@ -78,27 +78,33 @@ registerBlockType("create-block/contact-block", {
 				<div className="contact-div">
 					<h3 className="contact-heading">{title}</h3>
 					<ul className="contact-list">
-						<li className="contact-top">
-							<img
-								class="contact-icon"
-								src="/themes/rudolf-steiner/assets/svg/person.svg"
-							/>
-							{name}
-						</li>
-						<li className="contact-top">
-							<img
-								class="contact-icon"
-								src="/themes/rudolf-steiner/assets/svg/phone_iphone.svg"
-							/>
-							{phone}
-						</li>
-						<li>
-							<img
-								class="contact-icon"
-								src="/themes/rudolf-steiner/assets/svg/mail_outline.svg"
-							/>
-							{email}
-						</li>
+						{name && (
+							<li className="contact-top">
+								<img
+									class="contact-icon"
+									src="/themes/rudolf-steiner/assets/svg/person.svg"
+								/>
+								{name}
+							</li>
+						)}
+						{phone && (
+							<li className="contact-top">
+								<img
+									class="contact-icon"
+									src="/themes/rudolf-steiner/assets/svg/phone_iphone.svg"
+								/>
+								{phone}
+							</li>
+						)}
+						{email && (
+							<li>
+								<img
+									class="contact-icon"
+									src="/themes/rudolf-steiner/assets/svg/mail_outline.svg"
+								/>
+								{email}
+							</li>
+						)}
 					</ul>
 				</div>
 			</div>
