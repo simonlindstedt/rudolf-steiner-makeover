@@ -7,7 +7,8 @@ import {
 	useBlockProps,
 } from "@wordpress/block-editor";
 import "./editor.scss";
-import { ColorPalette, ColorPicker, PanelBody } from "@wordpress/components";
+import { ColorPalette, PanelBody } from "@wordpress/components";
+import colors from "../../helpers/colors";
 
 registerBlockType("create-block/text-image-block", {
 	title: "Text Image Block",
@@ -68,7 +69,7 @@ registerBlockType("create-block/text-image-block", {
 			<InspectorControls>
 				<PanelBody title="Text Card Color" initialOpen={true}>
 					<p>Select text card color</p>
-					<ColorPicker color={color} onChangeComplete={setColor}></ColorPicker>
+					<ColorPalette colors={colors} value={color} onChange={setColor} />
 				</PanelBody>
 				<PanelBody title="Type">
 					<p>Select type</p>
@@ -94,7 +95,7 @@ registerBlockType("create-block/text-image-block", {
 				</MediaUploadCheck>
 				<div
 					style={{
-						backgroundColor: color.hex,
+						backgroundColor: color,
 						width: "100%",
 						minHeight: "200px",
 						padding: "24px",
@@ -111,7 +112,7 @@ registerBlockType("create-block/text-image-block", {
 		return (
 			<div className={`text-image-block ${displayType}`}>
 				{imageUrl && <img src={imageUrl} />}
-				<div className="text" style={{ backgroundColor: color.hex }}>
+				<div className="text" style={{ backgroundColor: color }}>
 					<InnerBlocks.Content />
 				</div>
 			</div>

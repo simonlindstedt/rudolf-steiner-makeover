@@ -10,6 +10,7 @@ import {
 import { PanelBody } from "@wordpress/components";
 
 import "./editor.scss";
+import colors from "../../helpers/colors";
 
 registerBlockType("create-block/curved-block", {
 	title: "Curved Block",
@@ -52,6 +53,7 @@ registerBlockType("create-block/curved-block", {
 				<PanelBody title="Background-color">
 					<p>Select background color</p>
 					<ColorPalette
+						colors={colors}
 						value={backgroundColor}
 						onChange={setBackgroundColor}
 					></ColorPalette>

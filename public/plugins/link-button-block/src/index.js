@@ -10,6 +10,8 @@ import {
 import { PanelBody } from "@wordpress/components";
 import "./editor.scss";
 
+import colors from "../../helpers/colors";
+
 registerBlockType("create-block/link-button-block", {
 	title: "Link button",
 	icon: "button",
@@ -66,7 +68,7 @@ registerBlockType("create-block/link-button-block", {
 			setAttributes({ imageUrl: value.url, imageId: value.id });
 		};
 
-		const removeBackgroundImage = (value) => {
+		const removeBackgroundImage = () => {
 			setAttributes({ imageUrl: "", imageId: 0 });
 		};
 
@@ -101,7 +103,11 @@ registerBlockType("create-block/link-button-block", {
 			<InspectorControls>
 				<PanelBody title="Background-color">
 					<p>Select background color</p>
-					<ColorPalette value={color} onChange={setColor}></ColorPalette>
+					<ColorPalette
+						value={color}
+						onChange={setColor}
+						colors={colors}
+					></ColorPalette>
 				</PanelBody>
 				<PanelBody title="Background-image" initialOpen={true}>
 					<div className="editor-post-featured-image">

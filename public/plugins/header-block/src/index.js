@@ -10,6 +10,7 @@ import {
 
 import { PanelBody } from "@wordpress/components";
 
+import colors from "../../helpers/colors";
 import "./editor.scss";
 
 registerBlockType("create-block/header-block", {
@@ -87,6 +88,7 @@ registerBlockType("create-block/header-block", {
 				<PanelBody title="Background-color" initialOpen={true}>
 					<p>Select background color</p>
 					<ColorPalette
+						colors={colors}
 						value={backgroundColor}
 						onChange={setBackgroundColor}
 					></ColorPalette>
