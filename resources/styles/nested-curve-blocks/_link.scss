@@ -31,7 +31,9 @@
     width: 100%;
     min-height: 150px;
     padding: 16px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    border-radius: 8px;
 
     &.large {
       grid-row: span 2;
@@ -42,14 +44,29 @@
       max-width: 600px;
     }
 
+    &.background-image {
+      position: relative;
+      background-size: cover;
+      align-items: flex-start;
+      .title {
+        // until color picker in editor
+        background-color: #35524a;
+        color: white;
+        padding: 8px;
+        border-radius: 8px;
+        transform: translateY(-50%);
+      }
+    }
+
     .title {
+      // until color picker in editor
       text-decoration: none;
-      color: white;
+      color: #35524a;
     }
 
     &:hover {
       transform: scale(1.01);
-      box-shadow: 3px 3px 50px rgba(0, 0, 0, 0.2);
+      box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
     }
   }
 }

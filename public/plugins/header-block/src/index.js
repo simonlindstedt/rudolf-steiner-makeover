@@ -1,7 +1,6 @@
 import { registerBlockType } from "@wordpress/blocks";
 import {
 	InspectorControls,
-	PlainText,
 	useBlockProps,
 	ColorPalette,
 	MediaUploadCheck,
