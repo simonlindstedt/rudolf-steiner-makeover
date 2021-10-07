@@ -17,7 +17,6 @@
   }
 
   .curved-block {
-    min-height: 100vh;
     width: inherit;
     display: flex;
     flex-direction: column;
@@ -78,6 +77,11 @@
       @include link.grid;
       @include contact.block;
       @include text-image.block;
+      @media screen and(max-width: 700px) {
+        h2 {
+          margin-top: 0;
+        }
+      }
     }
 
     @media screen and (min-width: 1300px) {
