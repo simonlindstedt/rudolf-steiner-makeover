@@ -54,13 +54,22 @@
       h2,
       .single-image {
         align-self: flex-start;
-        margin-left: calc(50% - 250px);
+        margin-left: calc(50% - 300px);
         max-width: 600px;
         @media screen and (max-width: 700px) {
           max-width: unset;
           margin-left: unset;
           width: 100%;
         }
+      }
+
+      .ignore-margin {
+        margin-left: unset;
+        max-width: unset;
+      }
+      .center {
+        align-self: center;
+        justify-self: center;
       }
 
       @include image.cluster;
