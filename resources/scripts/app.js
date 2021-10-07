@@ -15,9 +15,12 @@ window.onload = () => {
   });
 
   subMenus.forEach((subMenu) => {
-    subMenu.querySelector("button").addEventListener("click", () => {
+    const button = subMenu.querySelector("button");
+
+    button.addEventListener("click", () => {
       const subMenuItems = subMenu.querySelectorAll("ul li");
       subMenu.classList.toggle("active");
+      button.classList.toggle("active");
 
       if (subMenu.classList.contains("active")) {
         // Add fade-in animation
