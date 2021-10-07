@@ -10,11 +10,15 @@
 
     .text {
       padding: 1rem;
-      background-color: darkgray;
-
       * {
         margin-left: unset;
       }
+    }
+
+    img,
+    .text {
+      border-radius: 8px;
+      box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.4);
     }
 
     &.spotlight {
@@ -69,6 +73,7 @@
           width: 100%;
         }
         .text {
+          margin-top: 0.5rem;
           width: 100%;
           transform: translateY(0%);
         }

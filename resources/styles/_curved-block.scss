@@ -29,6 +29,7 @@
 
     .sticky-title {
       display: none;
+      z-index: 1000;
       @media screen and (max-width: 420px) {
         display: block;
         align-self: flex-start;
@@ -42,9 +43,9 @@
     }
 
     .content {
-      margin-bottom: 20vh;
+      margin-bottom: 240px;
       width: 100%;
-      padding: 24px;
+      padding: 0px 24px;
       display: flex;
       flex-direction: column;
       justify-content: center;

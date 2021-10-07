@@ -7,7 +7,7 @@ import {
 	useBlockProps,
 } from "@wordpress/block-editor";
 import "./editor.scss";
-import { PanelBody } from "@wordpress/components";
+import { ColorPalette, ColorPicker, PanelBody } from "@wordpress/components";
 
 registerBlockType("create-block/text-image-block", {
 	title: "Text Image Block",
@@ -27,19 +27,29 @@ registerBlockType("create-block/text-image-block", {
 			type: "string",
 			default: "spotlight",
 		},
+		color: {
+			style: "string",
+			default: "#fefefe",
+		},
 	},
 
 	edit: ({ attributes, setAttributes }) => {
 		const ALLOWED_BLOCKS = ["core/heading", "core/paragraph"];
 		// Attributes
-		const { imageUrl, imageId, displayType } = attributes;
+		const { imageUrl, imageId, displayType, color } = attributes;
 
 		// Functions
 		const setImage = (value) => {
 			setAttributes({ imageUrl: value.url, imageId: value.id });
 		};
+
 		const setDisplayType = (value) => {
 			setAttributes({ displayType: value });
+		};
+
+		const setColor = (value) => {
+			console.log(value);
+			setAttributes({ color: value });
 		};
 
 		const uploadButton = (open) => {
@@ -56,6 +66,10 @@ registerBlockType("create-block/text-image-block", {
 
 		return [
 			<InspectorControls>
+				<PanelBody title="Text Card Color" initialOpen={true}>
+					<p>Select text card color</p>
+					<ColorPicker color={color} onChangeComplete={setColor}></ColorPicker>
+				</PanelBody>
 				<PanelBody title="Type">
 					<p>Select type</p>
 					<select
@@ -78,17 +92,26 @@ registerBlockType("create-block/text-image-block", {
 						render={({ open }) => uploadButton(open)}
 					/>
 				</MediaUploadCheck>
-				<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
+				<div
+					style={{
+						backgroundColor: color.hex,
+						width: "100%",
+						minHeight: "200px",
+						padding: "24px",
+					}}
+				>
+					<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
+				</div>
 			</div>,
 		];
 	},
 	save: ({ attributes }) => {
-		const { imageUrl, displayType } = attributes;
+		const { imageUrl, displayType, color } = attributes;
 
 		return (
 			<div className={`text-image-block ${displayType}`}>
 				{imageUrl && <img src={imageUrl} />}
-				<div className="text">
+				<div className="text" style={{ backgroundColor: color.hex }}>
 					<InnerBlocks.Content />
 				</div>
 			</div>
