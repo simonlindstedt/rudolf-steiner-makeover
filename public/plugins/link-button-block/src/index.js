@@ -63,6 +63,7 @@ registerBlockType("create-block/link-button-block", {
 					<select value={size} onChange={(e) => setSize(e.target.value)}>
 						<option value="">Normal</option>
 						<option value="large">Large</option>
+						<option value="single">Single</option>
 					</select>
 				</PanelBody>
 			</InspectorControls>,

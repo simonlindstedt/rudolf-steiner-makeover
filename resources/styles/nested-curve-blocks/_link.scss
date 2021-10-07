@@ -37,6 +37,11 @@
       grid-row: span 2;
     }
 
+    &.single {
+      font-size: 2rem;
+      max-width: 600px;
+    }
+
     .title {
       text-decoration: none;
       color: white;
