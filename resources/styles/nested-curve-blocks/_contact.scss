@@ -3,10 +3,17 @@
     width: 50%;
     display: flex;
     flex-direction: row;
-    margin-bottom: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
     .contact-div {
       display: flex;
       flex-direction: column;
+      background-color: #f3f7f6;
+      color: #35524a;
+      border-radius: 8px;
+      width: 90%;
+      padding: 0px 20px;
+      box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.32);
       .contact-heading {
         font-size: 26px;
         margin-bottom: 10px;
@@ -22,16 +29,25 @@
           margin-right: 15px;
           vertical-align: middle;
         }
+        .contact-icon path {
+          fill: #35524a;
+        }
         .contact-top {
           margin-bottom: 10px;
         }
       }
     }
-    @media screen and (max-width: 620px) {
+    @media screen and (max-width: 1024px) {
       width: 100%;
-      margin-bottom: 0;
       .contact-div {
-        padding-left: 30px;
+        width: 70%;
+      }
+    }
+    @media screen and (max-width: 620px) {
+      width: 90%;
+      .contact-div {
+        width: 100%;
+        padding: 0px 10px;
         .contact-heading {
           font-size: 20px;
         }
