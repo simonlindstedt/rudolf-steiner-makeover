@@ -118,8 +118,19 @@ nav {
     width: 64px;
     height: 64px;
     background-color: black;
-    top: 32px;
-    right: 32px;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+    &.active {
+      background-color: unset;
+    }
   }
 
   // Desktop mode
