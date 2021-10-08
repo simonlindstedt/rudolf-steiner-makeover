@@ -11,6 +11,9 @@ registerBlockType("create-block/contact-block", {
 		title: {
 			type: "string",
 		},
+		hours: {
+			type: "string",
+		},
 		name: {
 			type: "string",
 		},
@@ -23,9 +26,12 @@ registerBlockType("create-block/contact-block", {
 	},
 
 	edit: ({ attributes, setAttributes }) => {
-		const { title, name, phone, email } = attributes;
+		const { title, hours, name, phone, email } = attributes;
 		const setTitle = (value) => {
 			setAttributes({ title: value });
+		};
+		const setHours = (value) => {
+			setAttributes({ hours: value });
 		};
 		const setName = (value) => {
 			setAttributes({ name: value });
@@ -50,6 +56,12 @@ registerBlockType("create-block/contact-block", {
 					}}
 				></PlainText>
 				<PlainText
+					value={hours}
+					placeholder="Business hours"
+					onChange={setHours}
+					style={{ fontSize: "18px" }}
+				></PlainText>
+				<PlainText
 					value={name}
 					placeholder="Name"
 					onChange={setName}
@@ -71,13 +83,14 @@ registerBlockType("create-block/contact-block", {
 		];
 	},
 	save: ({ attributes }) => {
-		const { title, name, phone, email } = attributes;
+		const { title, hours, name, phone, email } = attributes;
 
 		return (
 			<div className="contact-wrapper">
 				<div className="contact-div">
 					<h3 className="contact-heading">{title}</h3>
 					<ul className="contact-list">
+						{hours && <li className="contact-top">{hours}</li>}
 						{name && (
 							<li className="contact-top">
 								<img

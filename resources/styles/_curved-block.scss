@@ -28,7 +28,8 @@
 
     .sticky-title {
       display: none;
-      z-index: 1000;
+      z-index: 2;
+      color: #35524a;
       @media screen and (max-width: 420px) {
         display: block;
         align-self: flex-start;
