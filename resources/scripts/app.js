@@ -1,6 +1,7 @@
 window.onload = () => {
   const scrollButton = document.querySelector(".scroll-button");
   const menuWrapper = document.querySelector(".menu-wrapper");
+  const decoration = menuWrapper.querySelector(".decoration");
   const subMenus = document.querySelectorAll(".submenu");
   const menuButton = document.querySelector(".menu-button");
 
@@ -8,9 +9,13 @@ window.onload = () => {
     menuWrapper.classList.toggle("active");
 
     if (menuWrapper.classList.contains("active")) {
-      menuWrapper.style.animationName = `slide-in`;
+      document.body.style.overflowY = "hidden";
+      menuWrapper.style.animationName = `fadeIn`;
+      decoration.style.animationName = `slide-in`;
     } else {
-      menuWrapper.style.animationName = `slide-out`;
+      document.body.removeAttribute("style");
+      menuWrapper.style.animationName = `fadeOut`;
+      decoration.style.animationName = `slide-out`;
     }
   });
 
@@ -51,8 +56,15 @@ window.onload = () => {
   };
 
   scrollButton.addEventListener("click", () => {
+    let scrollDistance;
+    if (window.innerWidth > 1024) {
+      scrollDistance =
+        window.innerHeight - document.querySelector("nav").clientHeight;
+    } else {
+      scrollDistance = window.innerHeight;
+    }
     window.scroll({
-      top: window.innerHeight,
+      top: scrollDistance,
       behavior: "smooth",
     });
   });

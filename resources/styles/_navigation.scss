@@ -7,25 +7,36 @@ nav {
   .menu-wrapper {
     display: flex;
     width: inherit;
-    transform: translateX(100%);
+    opacity: 0;
     height: 100vh;
-    background-color: darkgray;
+    background-color: rgba(107, 167, 131, 0.8);
+    pointer-events: none;
 
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: 1;
     animation-direction: normal;
     animation-fill-mode: forwards;
 
+    &.active {
+      pointer-events: all;
+    }
+
     .decoration {
-      background-color: black;
+      animation-duration: 0.4s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+
+      background-color: white;
       height: inherit;
       display: flex;
       justify-content: flex-start;
       align-items: center;
 
       h2 {
-        color: white;
+        color: rgba(107, 167, 131, 1);
         margin: 0px;
         margin-right: -5.3rem;
         margin-bottom: 25vh;
@@ -50,7 +61,7 @@ nav {
         position: relative;
         border: none;
         font-size: 24px;
-        color: black;
+        color: white;
         transition: transform 0.15s ease-in-out;
         &::after {
           content: "";
@@ -114,12 +125,14 @@ nav {
   // Desktop mode
   @media screen and (min-width: 1024px) {
     background-color: #6b94ae;
-    height: 128px;
+    height: 96px;
+
     .menu-wrapper {
+      pointer-events: all;
+      opacity: 1;
       height: inherit;
       transform: unset;
       background-color: unset;
-      transform: translateX(0%);
 
       .decoration {
         display: none;
@@ -134,21 +147,33 @@ nav {
         li {
           margin: 0;
         }
-        li.submenu {
-          button {
-            &.active {
-              transform: translateX(-115%);
-            }
-          }
 
+        li.submenu {
           ul.submenu-list {
-            transform: translateY(-43%);
+            display: flex;
             align-items: flex-start;
             position: absolute;
+            transform: translateY(1rem);
+            background-color: #6b94ae;
+            border-radius: 8px;
+            box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+
+            opacity: 0;
+            pointer-events: none;
+
+            transition: opacity 0.3s ease-in-out;
 
             li {
               padding: 8px;
-              margin: 0px 4px;
+              margin: 4px;
+            }
+          }
+
+          &.active {
+            ul.submenu-list {
+              display: flex;
+              opacity: 1;
+              pointer-events: all;
             }
           }
         }
