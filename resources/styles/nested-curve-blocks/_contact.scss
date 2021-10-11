@@ -2,7 +2,7 @@
   .contact-grid {
     display: grid;
     grid-template-rows: 1fr;
-    width: 100%;
+    width: 75%;
     gap: 0.5rem;
     padding: 16px 0px;
     user-select: none;
@@ -10,9 +10,12 @@
     @include block;
 
     @media screen and (min-width: 1124px) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
       padding: 24px;
+    }
+    @media screen and (max-width: 620px) {
+      width: 100%;
     }
   }
 }
@@ -25,6 +28,7 @@
     flex-direction: column;
     padding: 0px 20px;
     width: 100%;
+    min-height: 150px;
     box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.32);
     .contact-heading {
       font-size: 26px;
