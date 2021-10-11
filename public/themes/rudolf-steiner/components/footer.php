@@ -16,7 +16,7 @@
         </ul>
     </div>
     <div class="column-3">
-        <p>Vi finns även på</p>
         <a href="https://www.instagram.com/rudolfsteinerskolangoteborg/"><img class="icon insta" src="<?= get_template_directory_uri(); ?>/assets/svg/ig.svg" /></a>
+        <p>Vi finns även på Instagram</p>
     </div>
 </footer>

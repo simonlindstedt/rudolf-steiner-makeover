@@ -51,6 +51,10 @@
       justify-content: center;
       align-items: center;
 
+      @media screen and (max-width: 700px) {
+        margin-bottom: 150px;
+      }
+
       p,
       h2,
       .single-image {
