@@ -23,3 +23,4 @@ mix.sass("resources/styles/app.scss", "/styles/app.css").options({
   processCssUrls: false,
 });
 mix.copyDirectory("resources/svg", `public/themes/${theme}/assets/svg/`);
+mix.copyDirectory("resources/fonts", `public/themes/${theme}/assets/fonts/`);
