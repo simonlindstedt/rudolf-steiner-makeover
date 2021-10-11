@@ -29,9 +29,3 @@ jobs:
         run: npm run global-build
       - name: run rsync
         run: rsync -azh --delete --exclude=".gitignore" --exclude="package.json" --exclude="package-lock.json" --exclude="readme.txt" --exclude=".editorconfig" --exclude="node_modules" --exclude="public/plugins/*-block/src" ./public ./vendor ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/html/
-      - name: connect to server
-        run: ssh ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}
-      - name: change directory
-        run: cd /var/www/html/public
-      - name: run chmod
-        run: chmod -R 777 uploads
