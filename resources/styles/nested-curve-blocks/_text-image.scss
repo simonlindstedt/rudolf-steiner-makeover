@@ -27,15 +27,16 @@
 
     &.spotlight {
       img {
+        align-self: center;
         width: 70%;
         max-height: 1000px;
         object-fit: cover;
-        aspect-ratio: 9 / 16;
+        aspect-ratio: 4 / 3;
       }
 
       .text {
-        transform: translateY(-50%);
-        align-self: center;
+        transform: translateY(-25%);
+        align-self: flex-end;
         width: 50%;
       }
     }
@@ -44,7 +45,7 @@
       img {
         align-self: flex-end;
         width: 90%;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 4 / 3;
       }
 
       .text {
@@ -57,7 +58,7 @@
       img {
         align-self: flex-start;
         width: 90%;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 4 / 3;
       }
 
       .text {
@@ -80,6 +81,11 @@
           margin-top: 0.5rem;
           width: 100%;
           transform: translateY(0%);
+        }
+      }
+      &.spotlight {
+        img {
+          aspect-ratio: 9 / 16;
         }
       }
       &.left,

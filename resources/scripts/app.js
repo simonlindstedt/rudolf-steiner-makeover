@@ -14,8 +14,8 @@ window.onload = () => {
       menuWrapper.style.animationName = `fadeIn`;
       decoration.style.animationName = `slide-in`;
       menuButton.innerHTML = `<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4 4L30 30" stroke="#F3F7F6" stroke-width="5" stroke-linecap="round"/>
-      <path d="M30 4L4 30" stroke="#F3F7F6" stroke-width="5" stroke-linecap="round"/>
+      <path d="M4 4L30 30" stroke="#000000" stroke-width="5" stroke-linecap="round"/>
+      <path d="M30 4L4 30" stroke="#000000" stroke-width="5" stroke-linecap="round"/>
       </svg>
       `;
     } else {
