@@ -4,6 +4,7 @@ import {
 	InspectorControls,
 	MediaUpload,
 	MediaUploadCheck,
+	PlainText,
 	useBlockProps,
 } from "@wordpress/block-editor";
 import "./editor.scss";
@@ -30,14 +31,17 @@ registerBlockType("create-block/text-image-block", {
 		},
 		color: {
 			style: "string",
-			default: "#fefefe",
+			default: "black",
+		},
+		title: {
+			type: "string",
 		},
 	},
 
 	edit: ({ attributes, setAttributes }) => {
-		const ALLOWED_BLOCKS = ["core/heading", "core/paragraph"];
+		const ALLOWED_BLOCKS = ["core/paragraph"];
 		// Attributes
-		const { imageUrl, imageId, displayType, color } = attributes;
+		const { imageUrl, imageId, displayType, color, title } = attributes;
 
 		// Functions
 		const setImage = (value) => {
@@ -49,8 +53,10 @@ registerBlockType("create-block/text-image-block", {
 		};
 
 		const setColor = (value) => {
-			console.log(value);
 			setAttributes({ color: value });
+		};
+		const setTitle = (value) => {
+			setAttributes({ title: value });
 		};
 
 		const uploadButton = (open) => {
@@ -67,8 +73,8 @@ registerBlockType("create-block/text-image-block", {
 
 		return [
 			<InspectorControls>
-				<PanelBody title="Text Card Color" initialOpen={true}>
-					<p>Select text card color</p>
+				<PanelBody title="Title background color" initialOpen={true}>
+					<p>Select title background color</p>
 					<ColorPalette colors={colors} value={color} onChange={setColor} />
 				</PanelBody>
 				<PanelBody title="Type">
@@ -86,6 +92,12 @@ registerBlockType("create-block/text-image-block", {
 				</PanelBody>
 			</InspectorControls>,
 			<div {...useBlockProps()}>
+				<PlainText
+					value={title}
+					onChange={setTitle}
+					placeholder="title"
+					style={{ backgroundColor: color }}
+				/>
 				<MediaUploadCheck>
 					<MediaUpload
 						onSelect={setImage}
@@ -95,7 +107,7 @@ registerBlockType("create-block/text-image-block", {
 				</MediaUploadCheck>
 				<div
 					style={{
-						backgroundColor: color,
+						backgroundColor: "white",
 						width: "100%",
 						minHeight: "200px",
 						padding: "24px",
@@ -107,12 +119,13 @@ registerBlockType("create-block/text-image-block", {
 		];
 	},
 	save: ({ attributes }) => {
-		const { imageUrl, displayType, color } = attributes;
+		const { imageUrl, displayType, color, title } = attributes;
 
 		return (
 			<div className={`text-image-block ${displayType}`}>
+				<h2 style={{ backgroundColor: color }}>{title}</h2>
 				{imageUrl && <img src={imageUrl} />}
-				<div className="text" style={{ backgroundColor: color }}>
+				<div className="text">
 					<InnerBlocks.Content />
 				</div>
 			</div>

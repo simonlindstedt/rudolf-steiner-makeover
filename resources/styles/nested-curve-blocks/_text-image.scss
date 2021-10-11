@@ -8,7 +8,19 @@
     flex-direction: column;
     margin-top: 2rem;
 
+    h2 {
+      position: absolute;
+      padding: 8px;
+      top: 8px;
+      left: 8px;
+      border-radius: 8px;
+      margin: 0;
+      margin-left: 5%;
+      color: var(--main-mint-white);
+    }
+
     .text {
+      background-color: var(--main-mint-white);
       padding: 1rem;
       * {
         margin-left: unset;
@@ -28,7 +40,7 @@
     &.spotlight {
       img {
         align-self: center;
-        width: 70%;
+        width: 90%;
         max-height: 1000px;
         object-fit: cover;
         aspect-ratio: 4 / 3;
@@ -42,6 +54,12 @@
     }
 
     &.left {
+      h2 {
+        margin: 0;
+        left: unset;
+        right: 8px;
+        transform: translateY(calc(-50% - 8px));
+      }
       img {
         align-self: flex-end;
         width: 90%;
@@ -55,6 +73,10 @@
     }
 
     &.right {
+      h2 {
+        margin: 0;
+        transform: translateY(calc(-50% - 8px));
+      }
       img {
         align-self: flex-start;
         width: 90%;
@@ -70,6 +92,11 @@
 
     @media screen and (max-width: 800px) {
       margin-bottom: 2rem;
+
+      h2 {
+        margin-left: 0;
+        width: fit-content;
+      }
 
       &.spotlight,
       &.right,
