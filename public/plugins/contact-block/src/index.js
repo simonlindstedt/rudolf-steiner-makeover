@@ -86,40 +86,38 @@ registerBlockType("create-block/contact-block", {
 		const { title, hours, name, phone, email } = attributes;
 
 		return (
-			<div className="contact-wrapper">
-				<div className="contact-div">
-					<h3 className="contact-heading">{title}</h3>
-					<ul className="contact-list">
-						{hours && <li className="contact-top">{hours}</li>}
-						{name && (
-							<li className="contact-top">
-								<img
-									class="contact-icon"
-									src="/themes/rudolf-steiner/assets/svg/person.svg"
-								/>
-								{name}
-							</li>
-						)}
-						{phone && (
-							<li className="contact-top">
-								<img
-									class="contact-icon"
-									src="/themes/rudolf-steiner/assets/svg/phone_iphone.svg"
-								/>
-								{phone}
-							</li>
-						)}
-						{email && (
-							<li>
-								<img
-									class="contact-icon"
-									src="/themes/rudolf-steiner/assets/svg/mail_outline.svg"
-								/>
-								{email}
-							</li>
-						)}
-					</ul>
-				</div>
+			<div className="contact-div">
+				<h3 className="contact-heading">{title}</h3>
+				<ul className="contact-list">
+					{hours && <li className="contact-top">{hours}</li>}
+					{name && (
+						<li className="contact-top">
+							<img
+								class="contact-icon"
+								src="/themes/rudolf-steiner/assets/svg/person.svg"
+							/>
+							{name}
+						</li>
+					)}
+					{phone && (
+						<li className="contact-top">
+							<img
+								class="contact-icon"
+								src="/themes/rudolf-steiner/assets/svg/phone_iphone.svg"
+							/>
+							{phone}
+						</li>
+					)}
+					{email && (
+						<li>
+							<img
+								class="contact-icon"
+								src="/themes/rudolf-steiner/assets/svg/mail_outline.svg"
+							/>
+							<a href={"mailto:" + email}>{email}</a>
+						</li>
+					)}
+				</ul>
 			</div>
 		);
 	},

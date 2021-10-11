@@ -29,7 +29,7 @@
     .sticky-title {
       display: none;
       z-index: 2;
-      color: #35524a;
+      color: var(--main-dark-sea-green);
       @media screen and (max-width: 420px) {
         display: block;
         align-self: flex-start;
@@ -76,6 +76,7 @@
       @include image.cluster;
       @include link.button;
       @include link.grid;
+      @include contact.grid;
       @include contact.block;
       @include text-image.block;
       @media screen and(max-width: 700px) {
