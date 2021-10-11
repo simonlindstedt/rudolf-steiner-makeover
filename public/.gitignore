@@ -7,7 +7,8 @@ plugins/*
 !plugins/helpers/
 !plugins/.gitignore
 upgrade
-uploads
+uploads/*
+!uploads/.gitignore
 wordpress
 assets/
 smush-*
