@@ -26,11 +26,11 @@
     .decoration-wrapper,
     .image-text-wrapper {
       display: flex;
-      padding: 8px;
       flex-direction: column;
     }
     .decoration-wrapper {
       align-items: flex-end;
+      margin-right: 8px;
       .round {
         color: white;
         width: 32px;
