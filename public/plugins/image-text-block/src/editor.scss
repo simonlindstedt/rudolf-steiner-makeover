@@ -1,0 +1,28 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-create-block-image-text-block {
+	border: 1px dotted black;
+	display: flex;
+	flex-direction: column;
+	min-height: 200px;
+	padding: 24px;
+
+	* {
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+
+	textarea {
+		width: fit-content;
+		padding: 8px;
+	}
+	.text-content {
+		min-height: 200px;
+		background-color: white;
+		padding: 8px;
+	}
+}

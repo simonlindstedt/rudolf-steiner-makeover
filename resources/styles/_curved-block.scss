@@ -2,6 +2,7 @@
 @use "nested-curve-blocks/link";
 @use "nested-curve-blocks/contact";
 @use "nested-curve-blocks/text-image";
+@use "nested-curve-blocks/image-text";
 
 .curved-wrapper {
   position: relative;
@@ -55,6 +56,14 @@
         margin-bottom: 150px;
       }
 
+      h2 {
+        border-radius: 8px;
+        padding: 0px 10px;
+        font-size: 4rem;
+        color: white;
+        background-color: var(--main-dark-sea-green);
+      }
+
       p,
       h2,
       .single-image {
@@ -64,25 +73,27 @@
         @media screen and (max-width: 800px) {
           max-width: unset;
           margin-left: unset;
-          width: 100%;
+          // width: 100%;
         }
-      }
-
-      h2 {
-        border-radius: 8px;
-        padding: 0px 10px;
-        font-size: 4rem;
-        color: white;
-        background-color: var(--main-dark-sea-green);
       }
 
       .ignore-margin {
         margin-left: unset;
         max-width: unset;
       }
+
       .center {
         align-self: center;
         justify-self: center;
+      }
+
+      .margin-1024-adjust {
+        align-self: flex-start;
+        max-width: unset;
+        margin-left: calc((100vw - 1024px - 80px) / 2);
+        @media screen and (max-width: 1024px) {
+          margin: unset;
+        }
       }
 
       @include image.cluster;
@@ -91,6 +102,7 @@
       @include contact.grid;
       @include contact.block;
       @include text-image.block;
+      @include image-text.block;
       @media screen and(max-width: 700px) {
         h2 {
           margin-top: 0;
