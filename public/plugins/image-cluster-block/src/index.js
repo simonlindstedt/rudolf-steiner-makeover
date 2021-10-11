@@ -81,11 +81,11 @@ registerBlockType("create-block/image-cluster-block", {
 						value={secondImageId}
 						render={({ open }) => uploadButton(open, secondImageUrl)}
 					/>
-					<MediaUpload
+					{/* <MediaUpload
 						onSelect={thirdSelect}
 						value={thirdImageId}
 						render={({ open }) => uploadButton(open, thirdImageUrl)}
-					/>
+					/> */}
 				</MediaUploadCheck>
 			</div>,
 		];
@@ -96,7 +96,7 @@ registerBlockType("create-block/image-cluster-block", {
 			<div className="image-cluster">
 				<img src={firstImageUrl} className="large" />
 				<img src={secondImageUrl} className="medium" />
-				<img src={thirdImageUrl} className="small" />
+				{/* <img src={thirdImageUrl} className="small" /> */}
 			</div>,
 		];
 	},
