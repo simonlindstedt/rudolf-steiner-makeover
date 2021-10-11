@@ -12,13 +12,22 @@ footer {
     font-size: 48px;
   }
   .column-3 {
+    flex: 33.33%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    p {
+      font-size: 26px;
+      padding-left: 20px;
+    }
     .icon {
-      margin-bottom: 40px;
+      height: 96px;
     }
   }
   .column-1,
-  .column-2,
-  .column-3 {
+  .column-2 {
     flex: 33.33%;
     display: flex;
     flex-direction: column;
