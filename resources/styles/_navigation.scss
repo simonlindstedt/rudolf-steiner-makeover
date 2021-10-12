@@ -161,8 +161,18 @@ nav {
       transform: unset;
       background-color: unset;
 
+      justify-content: space-evenly;
+      align-items: center;
+
       .decoration {
         display: none;
+      }
+
+      .nav-logo {
+        margin-left: 2rem;
+        svg {
+          width: 64px;
+        }
       }
 
       ul {
