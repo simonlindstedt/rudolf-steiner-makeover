@@ -3,6 +3,7 @@
     display: flex;
     max-width: 1024px;
     position: relative;
+    margin-bottom: 50px;
 
     // Normalize
     h2,
@@ -33,15 +34,17 @@
       margin-right: 8px;
       .round {
         color: white;
-        width: 32px;
-        height: 32px;
+        width: 64px;
+        height: 64px;
         border-radius: 50%;
+        font-size: 48px;
         display: flex;
         justify-content: center;
         align-items: center;
       }
       h2 {
         margin-top: 1rem;
+        font-size: 48px;
       }
       .line {
         margin-top: 1rem;
@@ -66,23 +69,35 @@
       }
       .text-content {
         margin-top: 1rem;
-        background-color: white;
+        /* background-color: white; */
         border-radius: 8px;
         padding: 8px;
       }
     }
     @media screen and (max-width: 512px) {
       flex-direction: column;
+      margin-bottom: 40px;
+      img {
+        height: 244px;
+      }
       .decoration-wrapper {
         align-items: center;
         justify-content: flex-start;
         flex-direction: row;
+        margin-bottom: 30px;
         .line {
           display: none;
         }
         h2 {
           margin-top: 0;
           margin-left: 1rem;
+          font-size: 30px;
+          padding: 5px 10px;
+        }
+        .round {
+          width: 44px;
+          height: 44px;
+          font-size: 30px;
         }
       }
       .image-text-wrapper {
