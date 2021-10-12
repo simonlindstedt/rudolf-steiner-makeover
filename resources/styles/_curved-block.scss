@@ -64,16 +64,21 @@
       }
 
       p,
-      h2,
-      .single-image {
+      h2 {
         align-self: flex-start;
         margin-left: calc(50% - 350px);
         max-width: 700px;
         @media screen and (max-width: 800px) {
           max-width: unset;
           margin-left: unset;
-          // width: 100%;
         }
+      }
+
+      .single-image {
+        width: 100%;
+        max-width: 1280px;
+        object-fit: cover;
+        aspect-ratio: 21 / 9;
       }
 
       .ignore-margin {

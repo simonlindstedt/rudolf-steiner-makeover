@@ -2,9 +2,9 @@
   .image-text {
     align-self: flex-end;
     display: flex;
-    // max-width: 1024px;
     position: relative;
     margin-bottom: 50px;
+    padding-right: 25%;
 
     // Normalize
     h2,
@@ -86,7 +86,11 @@
       }
     }
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1900px) {
+      padding-right: 0;
+    }
+
+    @media screen and (max-width: 1400px) {
       flex-direction: column;
       margin-bottom: 40px;
 
