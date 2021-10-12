@@ -102,6 +102,14 @@
 @mixin button-single {
   .link-button {
     &.single {
+      align-self: flex-start;
+      margin-left: calc(50% - 350px);
+      min-width: 350px;
+      min-height: 100px;
+      @media screen and (max-width: 800px) {
+        min-width: 100%;
+        margin-left: unset;
+      }
     }
   }
 }
