@@ -80,7 +80,7 @@ registerBlockType("create-block/curved-block", {
 		// Attributes
 		const { title, backgroundColor } = attributes;
 		return (
-			<div className="curved-wrapper">
+			<div className="curved-wrapper" id={title}>
 				<span className="top" style={{ backgroundColor: backgroundColor }} />
 				<div
 					className="curved-block"
