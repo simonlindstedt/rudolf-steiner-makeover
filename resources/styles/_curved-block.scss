@@ -1,7 +1,6 @@
 @use "nested-curve-blocks/image";
 @use "nested-curve-blocks/link";
 @use "nested-curve-blocks/contact";
-@use "nested-curve-blocks/text-image";
 @use "nested-curve-blocks/image-text";
 
 .curved-wrapper {
@@ -101,7 +100,6 @@
       @include link.grid;
       @include contact.grid;
       @include contact.block;
-      @include text-image.block;
       @include image-text.block;
       @media screen and(max-width: 700px) {
         h2 {

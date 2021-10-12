@@ -1,23 +1,23 @@
 @mixin grid {
   .link-grid {
     display: grid;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     width: 100%;
-    gap: 0.5rem;
-    font-size: 2rem;
-    padding: 16px 0px;
-    user-select: none;
+    gap: 1rem;
+    margin: 6rem 0;
 
     @include button;
 
-    @media screen and (min-width: 1124px) {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      font-size: 3rem;
-      padding: 24px;
-
-      .link-button {
-        min-height: 250px;
+    @media screen and (min-width: 1024px) {
+      &.complex {
+        max-width: 1536px;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 0.8rem;
+      }
+      &.normal {
+        max-width: 1024px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.8rem;
       }
     }
   }
@@ -25,48 +25,83 @@
 
 @mixin button {
   .link-button {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
-    width: 100%;
     min-height: 150px;
-    padding: 16px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     border-radius: 8px;
-
-    &.large {
-      grid-row: span 2;
-    }
-
-    &.single {
-      font-size: 2rem;
-      max-width: 600px;
-    }
-
-    &.background-image {
-      position: relative;
-      background-size: cover;
-      align-items: flex-start;
-      .title {
-        // until color picker in editor
-        background-color: #35524a;
-        color: white;
-        padding: 8px;
-        border-radius: 8px;
-        // transform: translateY(-50%);
-      }
-    }
+    padding: 1rem;
+    background-size: cover;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 
     .title {
-      // until color picker in editor
-      text-decoration: none;
-      color: #35524a;
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 8px;
+      border-radius: 8px;
     }
 
     &:hover {
       transform: scale(1.03);
       box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+  .complex {
+    .link-button {
+      &.small,
+      &.medium,
+      &.large {
+        grid-column: span 1;
+      }
+      &.small {
+        min-height: 100px;
+      }
+      &.medium {
+        min-height: 125px;
+      }
+      &.large {
+        min-height: 150px;
+      }
+
+      @media screen and (min-width: 1024px) {
+        &.small {
+          grid-column: span 3;
+        }
+
+        &.medium {
+          grid-column: span 4;
+        }
+
+        &.large {
+          grid-column: span 5;
+        }
+      }
+    }
+  }
+  .normal {
+    .link-button {
+      &.small,
+      &.medium,
+      &.large {
+        grid-column: span 1;
+        min-height: 100px;
+      }
+
+      @media screen and (min-width: 1024px) {
+        &.small {
+          grid-column: span 1;
+        }
+
+        &.medium,
+        &.large {
+          grid-column: span 2;
+        }
+      }
+    }
+  }
+}
+
+@mixin button-single {
+  .link-button {
+    &.single {
     }
   }
 }

@@ -25,13 +25,17 @@ registerBlockType("create-block/link-button-block", {
 			type: "string",
 			attribute: "href",
 		},
-		color: {
+		backgroundColor: {
 			type: "string",
 			default: "#8ed1fc",
 		},
+		titleBackgroundColor: {
+			type: "string",
+			default: "#35524A",
+		},
 		size: {
 			type: "string",
-			default: "",
+			default: "small",
 		},
 		imageUrl: {
 			type: "string",
@@ -45,7 +49,15 @@ registerBlockType("create-block/link-button-block", {
 
 	edit: ({ attributes, setAttributes }) => {
 		// Props
-		const { url, title, color, size, imageUrl, imageId } = attributes;
+		const {
+			url,
+			title,
+			backgroundColor,
+			titleBackgroundColor,
+			size,
+			imageUrl,
+			imageId,
+		} = attributes;
 
 		// Functions
 		const setUrl = (value) => {
@@ -56,8 +68,12 @@ registerBlockType("create-block/link-button-block", {
 			setAttributes({ title: value });
 		};
 
-		const setColor = (value) => {
-			setAttributes({ color: value });
+		const setBackgroundColor = (value) => {
+			setAttributes({ backgroundColor: value });
+		};
+
+		const setTitleBackgroundColor = (value) => {
+			setAttributes({ titleBackgroundColor: value });
 		};
 
 		const setSize = (value) => {
@@ -101,13 +117,24 @@ registerBlockType("create-block/link-button-block", {
 
 		return [
 			<InspectorControls>
-				<PanelBody title="Background-color">
-					<p>Select background color</p>
+				<PanelBody title="Card Background Color" initialOpen={true}>
+					<p>Select Card Background Color</p>
 					<ColorPalette
-						value={color}
-						onChange={setColor}
+						value={backgroundColor}
+						onChange={setBackgroundColor}
 						colors={colors}
-					></ColorPalette>
+					/>
+				</PanelBody>
+				<PanelBody title="Title Background Color">
+					<p>Select Title Background Color</p>
+					<ColorPalette
+						value={titleBackgroundColor}
+						onChange={setTitleBackgroundColor}
+						colors={[
+							{ color: "#35524A", name: "Main Dark Sea Green" },
+							{ color: "#F3F7F6", name: "Main Mint White" },
+						]}
+					/>
 				</PanelBody>
 				<PanelBody title="Background-image" initialOpen={true}>
 					<div className="editor-post-featured-image">
@@ -124,14 +151,19 @@ registerBlockType("create-block/link-button-block", {
 				<PanelBody>
 					<p>Select size</p>
 					<select value={size} onChange={(e) => setSize(e.target.value)}>
-						<option value="">Normal</option>
+						<option value="small">Small</option>
+						<option value="medium">Medium</option>
 						<option value="large">Large</option>
 						<option value="single">Single</option>
 					</select>
 				</PanelBody>
 			</InspectorControls>,
-			<div {...useBlockProps()} style={{ backgroundColor: color }}>
+			<div {...useBlockProps()} style={{ backgroundColor: backgroundColor }}>
 				<PlainText
+					style={{
+						backgroundColor: titleBackgroundColor,
+						color: titleBackgroundColor === "#35524A" ? "white" : "black",
+					}}
 					value={title}
 					placeholder="Title"
 					onChange={setTitle}
@@ -147,18 +179,33 @@ registerBlockType("create-block/link-button-block", {
 		];
 	},
 	save: ({ attributes }) => {
-		const { url, title, color, size, imageUrl } = attributes;
+		const {
+			url,
+			title,
+			backgroundColor,
+			titleBackgroundColor,
+			size,
+			imageUrl,
+		} = attributes;
 
 		return (
 			<a
 				href={url}
 				style={{
-					backgroundColor: color,
+					backgroundColor: backgroundColor,
 					backgroundImage: imageUrl ? `url(${imageUrl})` : "unset",
 				}}
 				className={`link-button ${size} ${imageUrl ? "background-image" : ""}`}
 			>
-				<span className="title">{title}</span>
+				<span
+					className="title"
+					style={{
+						backgroundColor: titleBackgroundColor,
+						color: titleBackgroundColor === "#35524A" ? "white" : "black",
+					}}
+				>
+					{title}
+				</span>
 			</a>
 		);
 	},
