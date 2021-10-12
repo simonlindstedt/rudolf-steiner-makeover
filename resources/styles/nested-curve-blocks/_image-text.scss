@@ -1,7 +1,8 @@
 @mixin block {
   .image-text {
+    align-self: flex-end;
     display: flex;
-    max-width: 1024px;
+    // max-width: 1024px;
     position: relative;
     margin-bottom: 50px;
 
@@ -48,6 +49,7 @@
       }
     }
     .image-text-wrapper {
+      max-width: 1024px;
       .line {
         margin-right: 1rem;
         display: none;
@@ -84,12 +86,10 @@
       }
     }
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1200px) {
       flex-direction: column;
       margin-bottom: 40px;
-      img {
-        height: 244px;
-      }
+
       .decoration-wrapper {
         align-items: center;
         justify-content: flex-start;
@@ -120,6 +120,10 @@
 
       .image-text-wrapper {
         flex-direction: row;
+        img {
+          aspect-ratio: 1 / 1;
+          max-height: 300px;
+        }
         .line {
           display: block;
         }
