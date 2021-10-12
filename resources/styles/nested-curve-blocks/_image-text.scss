@@ -13,25 +13,16 @@
       max-width: unset;
     }
 
-    &.spotlight {
-      .decoration-wrapper {
-        h2 {
-          margin-top: 0;
-        }
-        .round {
-          display: none;
-        }
-      }
-    }
-
     .decoration-wrapper,
     .image-text-wrapper {
       display: flex;
       flex-direction: column;
     }
+
     .decoration-wrapper {
       align-items: flex-end;
-      margin-right: 8px;
+      margin-right: 1rem;
+
       .round {
         color: white;
         width: 64px;
@@ -42,10 +33,12 @@
         justify-content: center;
         align-items: center;
       }
+
       h2 {
         margin-top: 1rem;
         font-size: 48px;
       }
+
       .line {
         margin-top: 1rem;
         display: block;
@@ -56,17 +49,20 @@
     }
     .image-text-wrapper {
       .line {
-        margin-right: 8px;
+        margin-right: 1rem;
         display: none;
         width: 8px;
         height: 100%;
         border-radius: 8px;
       }
+
       img {
+        aspect-ratio: 16 / 9;
         border-radius: 8px;
         width: 100%;
         object-fit: cover;
       }
+
       .text-content {
         margin-top: 1rem;
         /* background-color: white; */
@@ -74,7 +70,21 @@
         padding: 8px;
       }
     }
-    @media screen and (max-width: 512px) {
+
+    &.spotlight {
+      .decoration-wrapper {
+        h2 {
+          margin-top: 0;
+          margin-left: 0;
+        }
+
+        .round {
+          display: none;
+        }
+      }
+    }
+
+    @media screen and (max-width: 800px) {
       flex-direction: column;
       margin-bottom: 40px;
       img {
@@ -85,9 +95,16 @@
         justify-content: flex-start;
         flex-direction: row;
         margin-bottom: 30px;
+
+        .round {
+          width: 48px;
+          height: 48px;
+        }
+
         .line {
           display: none;
         }
+
         h2 {
           margin-top: 0;
           margin-left: 1rem;
@@ -100,6 +117,7 @@
           font-size: 30px;
         }
       }
+
       .image-text-wrapper {
         flex-direction: row;
         .line {
