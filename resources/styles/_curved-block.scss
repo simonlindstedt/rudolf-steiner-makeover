@@ -10,10 +10,10 @@
   .top {
     display: block;
     position: absolute;
-    height: 50vh;
+    height: 500px;
     width: inherit;
     z-index: -1;
-    top: calc(-50vh + 100px);
+    top: calc(-500px + 50px);
   }
 
   .curved-block {
