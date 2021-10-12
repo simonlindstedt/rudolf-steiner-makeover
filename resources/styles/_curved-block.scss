@@ -89,6 +89,13 @@
         margin-bottom: 0;
       }
 
+      .p-24-16 {
+        font-size: 24px;
+        @media screen and (max-width: 500px) {
+          font-size: 16px;
+        }
+      }
+
       .center {
         align-self: center;
         justify-self: center;
