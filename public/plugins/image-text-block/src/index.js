@@ -33,7 +33,7 @@ registerBlockType("create-block/image-text-block", {
 		},
 		cardType: {
 			type: "string",
-			default: "alumni",
+			default: "spotlight",
 		},
 		icon: {
 			type: "string",
