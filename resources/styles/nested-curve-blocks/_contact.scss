@@ -2,10 +2,10 @@
   .contact-grid {
     display: grid;
     grid-template-rows: 1fr;
-    width: 75%;
+    width: 100%;
     gap: 0.5rem;
     user-select: none;
-    max-width: 800px;
+    max-width: 1024px;
 
     @include block;
 
