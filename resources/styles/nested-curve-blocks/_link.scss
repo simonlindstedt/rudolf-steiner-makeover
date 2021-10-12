@@ -25,6 +25,7 @@
 
 @mixin button {
   .link-button {
+    user-select: none;
     min-height: 150px;
     border-radius: 8px;
     padding: 1rem;

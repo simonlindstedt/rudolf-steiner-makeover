@@ -14,7 +14,7 @@ import colors from "../../helpers/colors";
 
 registerBlockType("create-block/curved-block", {
 	title: "Curved Block",
-	icon: "carrot",
+	icon: "block-default",
 	category: "common",
 
 	attributes: {
@@ -33,13 +33,12 @@ registerBlockType("create-block/curved-block", {
 			"core/heading",
 			"core/paragraph",
 			"create-block/image-cluster-block",
-			"create-block/contact-block",
 			"create-block/link-grid-block",
-			"create-block/text-image-block",
+			"create-block/link-button-block",
 			"create-block/image-text-block",
 			"create-block/single-image-block",
-			"create-block/link-button-block",
 			"create-block/contact-grid-block",
+			"create-block/contact-block",
 		];
 
 		// Functions
