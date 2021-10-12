@@ -98,6 +98,10 @@
         padding-top: 0;
       }
 
+      .no-padding-bottom {
+        padding-bottom: 0;
+      }
+
       .p-24-16 {
         font-size: 24px;
         @media screen and (max-width: 500px) {
@@ -141,7 +145,7 @@
       @media screen and(max-width: 700px) {
         h2 {
           margin-top: 0;
-          font-size: 2.5rem;
+          font-size: 35px;
           width: unset;
           margin-top: -40px;
         }
