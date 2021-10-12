@@ -31,7 +31,7 @@ registerBlockType("create-block/link-button-block", {
 		},
 		titleBackgroundColor: {
 			type: "string",
-			default: "#35524A",
+			default: "#25342e",
 		},
 		size: {
 			type: "string",
@@ -131,7 +131,7 @@ registerBlockType("create-block/link-button-block", {
 						value={titleBackgroundColor}
 						onChange={setTitleBackgroundColor}
 						colors={[
-							{ color: "#35524A", name: "Main Dark Sea Green" },
+							{ color: "#25342e", name: "Main Dark Sea Green" },
 							{ color: "#F3F7F6", name: "Main Mint White" },
 						]}
 					/>
@@ -162,7 +162,7 @@ registerBlockType("create-block/link-button-block", {
 				<PlainText
 					style={{
 						backgroundColor: titleBackgroundColor,
-						color: titleBackgroundColor === "#35524A" ? "white" : "black",
+						color: titleBackgroundColor === "#25342e" ? "white" : "black",
 					}}
 					value={title}
 					placeholder="Title"
@@ -201,7 +201,7 @@ registerBlockType("create-block/link-button-block", {
 					className="title"
 					style={{
 						backgroundColor: titleBackgroundColor,
-						color: titleBackgroundColor === "#35524A" ? "white" : "black",
+						color: titleBackgroundColor === "#25342e" ? "white" : "black",
 					}}
 				>
 					{title}
