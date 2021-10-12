@@ -8,8 +8,19 @@ footer {
   flex-direction: row;
   color: var(--main-dark-sea-green);
   .column-1 {
-    padding-left: 100px;
-    font-size: 48px;
+    flex: 33.33%;
+    font-size: 36px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .logo-div {
+      width: 50%;
+      padding: 60px 0px 50px 70px;
+      .logo {
+        height: 70px;
+      }
+    }
   }
   .column-3 {
     flex: 33.33%;
@@ -26,7 +37,7 @@ footer {
       height: 96px;
     }
   }
-  .column-1,
+
   .column-2 {
     flex: 33.33%;
     display: flex;

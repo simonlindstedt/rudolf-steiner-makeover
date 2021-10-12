@@ -1,5 +1,8 @@
 <footer>
     <div class="column-1">
+        <div class="logo-div">
+            <img class="logo" src="<?= get_template_directory_uri(); ?>/assets/svg/logo.svg" />
+        </div>
         <h4 class="bold">Rudolf Steinerskolan</h4>
     </div>
     <div class="column-2">
