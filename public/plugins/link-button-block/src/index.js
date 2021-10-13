@@ -162,7 +162,7 @@ registerBlockType("create-block/link-button-block", {
 				<PlainText
 					style={{
 						backgroundColor: titleBackgroundColor,
-						color: titleBackgroundColor === "#25342e" ? "white" : "black",
+						color: titleBackgroundColor === "#25342e" ? "white" : "#25342e",
 					}}
 					value={title}
 					placeholder="Title"
@@ -201,7 +201,7 @@ registerBlockType("create-block/link-button-block", {
 					className="title"
 					style={{
 						backgroundColor: titleBackgroundColor,
-						color: titleBackgroundColor === "#25342e" ? "white" : "black",
+						color: titleBackgroundColor === "#25342e" ? "white" : "#25342e",
 					}}
 				>
 					{title}

@@ -44,8 +44,9 @@
         </ul>
     </div>
     <button class="menu-button">
-        <svg width="29" height="24" viewBox="0 0 29 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0H29V3.91304H0V0ZM0 9.78261H29V13.6957H0V9.78261ZM0 19.5652H29V23.4783H0V19.5652Z" fill="white" />
+        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="11" width="26" height="28" fill="white" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58172 0 0 3.58172 0 8V42C0 46.4183 3.58172 50 8 50H50V0H8ZM36.8853 11.9565H13.1148V16.3044H36.8853V11.9565ZM36.8853 22.8261H13.1148V27.1739H36.8853V22.8261ZM36.8853 33.6957H13.1148V38.0435H36.8853V33.6957Z" fill="#25342E" />
         </svg>
     </button>
 </nav>

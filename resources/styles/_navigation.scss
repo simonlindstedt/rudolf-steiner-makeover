@@ -28,12 +28,8 @@ nav {
       animation-iteration-count: 1;
       animation-direction: normal;
       animation-fill-mode: forwards;
-
       background-color: rgba(35, 110, 114, 0.8);
       height: inherit;
-      // display: flex;
-      // justify-content: flex-start;
-      // align-items: center;
 
       h2 {
         color: var(--full-white);
@@ -41,10 +37,7 @@ nav {
         margin-left: -6.7rem;
         margin-right: -6rem;
         margin-top: 15vh;
-        // margin-right: -5.3rem;
-        // margin-bottom: 25vh;
         font-size: 8rem;
-        // transform: rotate(-90deg);
         transform: rotate(90deg);
       }
     }
@@ -76,7 +69,7 @@ nav {
         position: relative;
         border: none;
         font-size: 24px;
-        color: black;
+        color: var(--main-dark-sea-green);
         transition: transform 0.15s ease-in-out;
         font-weight: 600;
         &::after {
@@ -86,7 +79,7 @@ nav {
           left: 0;
           width: 100%;
           height: 0.15rem;
-          background-color: black;
+          background-color: var(--main-dark-sea-green);
           opacity: 0;
           transform: scale(0);
           transition: transform 0.1s ease-out, opacity 0.1s linear;
@@ -133,22 +126,25 @@ nav {
 
   button.menu-button {
     position: absolute;
-    border-radius: 50%;
-    width: 64px;
-    height: 64px;
-    background-color: black;
-    top: 16px;
-    right: 16px;
+    width: 48px;
+    height: 48px;
+    top: 32px;
+    right: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: background-color 0.3s ease-in-out;
+
     svg {
-      width: 24px;
-      height: 24px;
+      width: 100%;
+      height: 100%;
     }
+
     &.active {
-      background-color: unset;
+      svg {
+        width: 50%;
+        height: 50%;
+      }
     }
   }
 
