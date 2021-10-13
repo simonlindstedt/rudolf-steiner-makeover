@@ -2,6 +2,7 @@
 @use "nested-curve-blocks/link";
 @use "nested-curve-blocks/contact";
 @use "nested-curve-blocks/image-text";
+// @use "nested-curve-blocks/post";
 
 .curved-wrapper {
   position: relative;
@@ -73,6 +74,7 @@
         color: white;
         background-color: var(--main-dark-sea-green);
         margin-top: -0px;
+
         @media screen and (max-width: 600px) {
           font-size: 3rem;
         }
@@ -90,10 +92,14 @@
       }
 
       .single-image {
+        border-radius: 8px;
         width: 100%;
         max-width: 1280px;
         object-fit: cover;
         aspect-ratio: 21 / 9;
+        @media screen and (min-width: 1200px) {
+          margin-bottom: 6rem;
+        }
       }
 
       .ignore-margin {
@@ -164,6 +170,9 @@
       @include contact.grid;
       @include contact.block;
       @include image-text.block;
+
+      // @include post.block;
+
       @media screen and(max-width: 420px) {
         h2 {
           margin-top: 0;
