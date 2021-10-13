@@ -94,6 +94,17 @@
           display: none;
         }
       }
+      .image-text-wrapper {
+        .right {
+          *:not(p, strong) {
+            box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+          }
+        }
+        .text-content {
+          background-color: var(--main-mint-white);
+          padding: 1rem;
+        }
+      }
     }
 
     @media screen and (max-width: 1900px) {
