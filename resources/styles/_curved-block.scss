@@ -127,7 +127,7 @@
 
       .margin-1024-adjust {
         align-self: flex-start;
-        max-width: unset;
+        // max-width: unset;
         margin-left: calc((100vw - 1024px - 80px) / 2);
         @media screen and (max-width: 1100px) {
           margin-left: 0;
