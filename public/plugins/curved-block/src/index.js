@@ -43,6 +43,9 @@ registerBlockType("create-block/curved-block", {
 
 		// Functions
 		const setTitle = (value) => {
+			value = value.replaceAll(/([å])/g, "a");
+			value = value.replaceAll(/([ä])/g, "a");
+			value = value.replaceAll(/([ö])/g, "o");
 			setAttributes({ title: value });
 		};
 		const setBackgroundColor = (value) => {

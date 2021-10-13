@@ -4,6 +4,7 @@ window.onload = () => {
   const decoration = menuWrapper.querySelector(".decoration");
   const subMenus = document.querySelectorAll(".submenu");
   const menuButton = document.querySelector(".menu-button");
+  const anchorLinks = document.querySelectorAll(".link-grid.normal a");
 
   menuButton.addEventListener("click", () => {
     menuWrapper.classList.toggle("active");
@@ -80,4 +81,22 @@ window.onload = () => {
       behavior: "smooth",
     });
   });
+
+  if (anchorLinks) {
+    anchorLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        if (link.href.search(/#/) > 0) {
+          e.preventDefault();
+          const t = `#${link.href.split("#")[1]}`;
+          const distance =
+            document.querySelector(t).offsetTop -
+            document.querySelector("nav").clientHeight -
+            16;
+          window.scroll({
+            top: distance,
+          });
+        }
+      });
+    });
+  }
 };
