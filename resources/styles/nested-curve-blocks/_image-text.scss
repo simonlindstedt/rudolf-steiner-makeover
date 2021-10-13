@@ -96,7 +96,7 @@
       }
       .image-text-wrapper {
         .right {
-          *:not(p, strong) {
+          *:not(p, span) {
             box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
           }
         }
