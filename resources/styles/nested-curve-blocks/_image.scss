@@ -8,6 +8,10 @@
     position: relative;
     min-height: 720px;
 
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 6rem;
+    }
+
     img {
       border-radius: 8px;
       position: absolute;
