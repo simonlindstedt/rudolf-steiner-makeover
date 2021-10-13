@@ -4,7 +4,7 @@
             <img class="logo" src="<?= get_template_directory_uri(); ?>/assets/svg/logo.svg" />
         </div>
         <div class="rudolf-div">
-            <h4 class="bold">Rudolf Steinerskolan</h4>
+            <h4 class="bold">Rudolf<br>Steinerskolan</h4>
         </div>
     </div>
     <div class="column-2">
