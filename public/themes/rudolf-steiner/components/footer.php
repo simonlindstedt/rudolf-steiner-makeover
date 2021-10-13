@@ -3,7 +3,9 @@
         <div class="logo-div">
             <img class="logo" src="<?= get_template_directory_uri(); ?>/assets/svg/logo.svg" />
         </div>
-        <h4 class="bold">Rudolf Steinerskolan</h4>
+        <div class="rudolf-div">
+            <h4 class="bold">Rudolf Steinerskolan</h4>
+        </div>
     </div>
     <div class="column-2">
         <ul>
