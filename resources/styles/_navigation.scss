@@ -174,9 +174,11 @@ nav {
         display: flex;
         margin-left: 2rem;
         align-items: center;
+        font-size: 1.15em;
         svg {
           width: 64px;
-          margin-right: 0.5rem;
+          margin-right: 0.2rem;
+          align-self: flex-end;
         }
       }
 
