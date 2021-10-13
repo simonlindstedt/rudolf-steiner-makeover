@@ -96,13 +96,19 @@
       }
       .image-text-wrapper {
         .right {
-          *:not(p, span) {
+          *:not(p, span, strong, i) {
             box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
           }
         }
         .text-content {
           background-color: var(--main-mint-white);
           padding: 1rem;
+        }
+        @media screen and (max-width: 1400px) {
+          img {
+            aspect-ratio: 9 / 16;
+            max-height: 700px;
+          }
         }
       }
     }
