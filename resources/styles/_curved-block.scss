@@ -2,7 +2,6 @@
 @use "nested-curve-blocks/link";
 @use "nested-curve-blocks/contact";
 @use "nested-curve-blocks/image-text";
-// @use "nested-curve-blocks/post";
 
 .curved-wrapper {
   position: relative;
@@ -170,8 +169,6 @@
       @include contact.grid;
       @include contact.block;
       @include image-text.block;
-
-      // @include post.block;
 
       @media screen and(max-width: 420px) {
         h2 {
