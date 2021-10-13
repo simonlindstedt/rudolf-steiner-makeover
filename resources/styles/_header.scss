@@ -52,6 +52,11 @@ button.scroll-button {
   left: calc(50vw - 64px / 2);
   right: calc(50vw - 64px / 2);
   bottom: 32px;
+  @media screen and (max-width: 400px) {
+    width: 56px;
+    height: 56px;
+    transform: translateY(16px);
+  }
   transition: transform 0.3s ease-in-out;
   &:hover {
     transform: scale(1.05);
