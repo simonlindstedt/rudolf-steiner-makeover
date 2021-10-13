@@ -24,6 +24,9 @@ registerBlockType("create-block/curved-block", {
 		backgroundColor: {
 			type: "string",
 		},
+		id: {
+			type: "string",
+		},
 	},
 
 	edit: ({ attributes, setAttributes }) => {
@@ -43,13 +46,18 @@ registerBlockType("create-block/curved-block", {
 
 		// Functions
 		const setTitle = (value) => {
-			value = value.replaceAll(/([å])/g, "a");
-			value = value.replaceAll(/([ä])/g, "a");
-			value = value.replaceAll(/([ö])/g, "o");
 			setAttributes({ title: value });
+			setId(value);
 		};
 		const setBackgroundColor = (value) => {
 			setAttributes({ backgroundColor: value });
+		};
+
+		const setId = (value) => {
+			value = value.replaceAll(/([å])/g, "a");
+			value = value.replaceAll(/([ä])/g, "a");
+			value = value.replaceAll(/([ö])/g, "o");
+			setAttributes({ id: value });
 		};
 
 		return [
@@ -81,9 +89,9 @@ registerBlockType("create-block/curved-block", {
 	},
 	save: ({ attributes }) => {
 		// Attributes
-		const { title, backgroundColor } = attributes;
+		const { title, backgroundColor, id } = attributes;
 		return (
-			<div className="curved-wrapper" id={title}>
+			<div className="curved-wrapper" id={id}>
 				<span className="top" style={{ backgroundColor: backgroundColor }} />
 				<div
 					className="curved-block"
