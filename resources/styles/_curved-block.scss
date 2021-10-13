@@ -65,6 +65,7 @@
         font-size: 4rem;
         color: white;
         background-color: var(--main-dark-sea-green);
+        margin-top: -0px;
       }
 
       p,
@@ -153,7 +154,7 @@
       @include contact.grid;
       @include contact.block;
       @include image-text.block;
-      @media screen and(max-width: 700px) {
+      @media screen and(max-width: 420px) {
         h2 {
           margin-top: 0;
           font-size: 35px;

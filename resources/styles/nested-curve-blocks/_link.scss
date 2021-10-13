@@ -6,6 +6,16 @@
     gap: 1rem;
     margin: 6rem 0;
 
+    @media screen and (max-width: 420px) {
+      &.complex {
+        margin: -40px 0px;
+      }
+      &.normal {
+        margin-top: 2rem;
+        margin-bottom: 0px;
+      }
+    }
+
     @include button;
 
     @media screen and (min-width: 1024px) {
