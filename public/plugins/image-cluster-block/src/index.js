@@ -19,6 +19,9 @@ registerBlockType("create-block/image-cluster-block", {
 			type: "number",
 			default: 0,
 		},
+		firstImageAlt: {
+			type: "string",
+		},
 		secondImageUrl: {
 			attribute: "src",
 		},
@@ -26,33 +29,28 @@ registerBlockType("create-block/image-cluster-block", {
 			type: "number",
 			default: 0,
 		},
-		thirdImageUrl: {
-			attribute: "src",
-		},
-		thirdImageId: {
-			type: "number",
-			default: 0,
+		secondImageAlt: {
+			type: "string",
 		},
 	},
 
 	edit: ({ attributes, setAttributes }) => {
-		const {
-			firstImageUrl,
-			secondImageUrl,
-			thirdImageUrl,
-			firstImageId,
-			secondImageId,
-			thirdImageId,
-		} = attributes;
+		const { firstImageUrl, secondImageUrl, firstImageId, secondImageId } =
+			attributes;
 
 		const firstSelect = (media) => {
-			setAttributes({ firstImageUrl: media.url, firstImageId: media.id });
+			setAttributes({
+				firstImageUrl: media.url,
+				firstImageId: media.id,
+				firstImageAlt: media.alt,
+			});
 		};
 		const secondSelect = (media) => {
-			setAttributes({ secondImageUrl: media.url, secondImageId: media.id });
-		};
-		const thirdSelect = (media) => {
-			setAttributes({ thirdImageUrl: media.url, thirdImageId: media.id });
+			setAttributes({
+				secondImageUrl: media.url,
+				secondImageId: media.id,
+				secondImageAlt: media.alt,
+			});
 		};
 
 		const uploadButton = (open, imgUrl) => {
@@ -81,22 +79,17 @@ registerBlockType("create-block/image-cluster-block", {
 						value={secondImageId}
 						render={({ open }) => uploadButton(open, secondImageUrl)}
 					/>
-					{/* <MediaUpload
-						onSelect={thirdSelect}
-						value={thirdImageId}
-						render={({ open }) => uploadButton(open, thirdImageUrl)}
-					/> */}
 				</MediaUploadCheck>
 			</div>,
 		];
 	},
 	save: ({ attributes }) => {
-		const { firstImageUrl, secondImageUrl, thirdImageUrl } = attributes;
+		const { firstImageUrl, secondImageUrl, firstImageAlt, secondImageAlt } =
+			attributes;
 		return [
 			<div className="image-cluster">
-				<img src={firstImageUrl} className="large" />
-				<img src={secondImageUrl} className="medium" />
-				{/* <img src={thirdImageUrl} className="small" /> */}
+				<img src={firstImageUrl} alt={firstImageAlt} className="large" />
+				<img src={secondImageUrl} alt={secondImageAlt} className="medium" />
 			</div>,
 		];
 	},

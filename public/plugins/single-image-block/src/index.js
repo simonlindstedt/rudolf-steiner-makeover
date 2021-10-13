@@ -21,6 +21,9 @@ registerBlockType("create-block/single-image-block", {
 			type: "number",
 			default: 0,
 		},
+		imageAlt: {
+			type: "string",
+		},
 	},
 
 	edit: ({ attributes, setAttributes }) => {
@@ -29,7 +32,11 @@ registerBlockType("create-block/single-image-block", {
 
 		// Functions
 		const setImage = (value) => {
-			setAttributes({ imageUrl: value.url, imageId: value.id });
+			setAttributes({
+				imageUrl: value.url,
+				imageId: value.id,
+				imageAlt: value.alt,
+			});
 		};
 
 		const uploadButton = (open) => {
@@ -58,8 +65,8 @@ registerBlockType("create-block/single-image-block", {
 	},
 	save: ({ attributes }) => {
 		// Attributes
-		const { imageUrl } = attributes;
+		const { imageUrl, imageAlt } = attributes;
 
-		return <img className="single-image" src={imageUrl} />;
+		return <img className="single-image" src={imageUrl} alt={imageAlt} />;
 	},
 });

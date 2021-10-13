@@ -27,6 +27,9 @@ registerBlockType("create-block/image-text-block", {
 			type: "number",
 			default: 0,
 		},
+		imageAlt: {
+			type: "string",
+		},
 		color: {
 			type: "string",
 			default: "#F3F7F6",
@@ -51,7 +54,11 @@ registerBlockType("create-block/image-text-block", {
 			setAttributes({ title: value });
 		};
 		const setImage = (value) => {
-			setAttributes({ imageUrl: value.url, imageId: value.id });
+			setAttributes({
+				imageUrl: value.url,
+				imageId: value.id,
+				imageAlt: value.alt,
+			});
 		};
 
 		const setColor = (value) => {
@@ -142,7 +149,7 @@ registerBlockType("create-block/image-text-block", {
 	},
 	save: ({ attributes }) => {
 		// Attributes
-		const { title, imageUrl, color, cardType, icon } = attributes;
+		const { title, imageUrl, imageAlt, color, cardType, icon } = attributes;
 
 		return (
 			<div className={`image-text ${cardType}`}>
@@ -160,7 +167,7 @@ registerBlockType("create-block/image-text-block", {
 						<span className="line" style={{ backgroundColor: color }} />
 					</div>
 					<div className="right">
-						<img src={imageUrl} />
+						<img src={imageUrl} alt={imageAlt} />
 						<div className="text-content">
 							<InnerBlocks.Content />
 						</div>
