@@ -169,10 +169,13 @@ nav {
       }
 
       .nav-logo {
-        display: initial;
+        color: var(--main-dark-sea-green);
+        font-weight: 700;
+        display: flex;
         margin-left: 2rem;
         svg {
           width: 64px;
+          margin-right: 1rem;
         }
       }
 
